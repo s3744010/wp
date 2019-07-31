@@ -7,12 +7,11 @@
     
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-    <link id='style.css' type="text/css" rel="stylesheet" href="css/style.css">
+    <link id='stylecss' type="text/css" rel="stylesheet" href="./style.css">
     <script src='../wireframe.js'></script>
   </head>
 
   <body>
-
     <header>
       <div>LUNARDO</div>
     </header>
