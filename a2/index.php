@@ -14,11 +14,21 @@
   <body>
 
     <header>
-      <div>Put company logo and name here</div>
+      <div>LUNARDO</div>
     </header>
 
     <nav>
-      <div>Put website navigation links here</div>
+      <div>
+        <a>
+          <li>ABOUT US</li>
+        </a>
+        <a>
+          <li>PRICES</li>
+        </a>
+        <a>
+          <li>NOW SHOWING</li>
+        </a>
+      </div>
     </nav>
 
     <main>
