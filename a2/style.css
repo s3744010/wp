@@ -1,77 +1,133 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://www.fonts.com/font/urw/futura?QueryFontType=Web&src=GoogleWebFonts");
+@import url("https://www.fonts.com/font/flat-it/bebas-neue?QueryFontType=Web&src=GoogleWebFonts");
 
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-}
 
-.intro {
-    height: 30%;
-    width: 100%;
-    margin: auto;
-    display: table;
-    position: relative;
-    top: 0;
-    align-items: center;
-}
-
-.inner {
-    display: table-cell;
-    width: 100%;
-    max-width: none;
-    text-align: center;
+    background: black;
 }
 
 header {
-    height: 40px;
-    padding: 10px 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 2px solid #C5C6C7;
 }
 
-header a {
-    font-family: "Montserrat";
-    font-size: 30px;
-    font-weight: bold;
-}
-
-header span {
-    font-family: "Montserrat";
-    font-size: 30px;
+header div {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    color: white;
 }
 
 nav {
-    display: inline-table;
+    height: 70px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: sticky;
+    z-index: 100;
     top: 0;
-    border: solid 1px;
-    transition: border-width 0.1s linear;
-}
-
-nav:hover {
-    border-width: 2px;
-}
-
-nav ul {
-    padding: 0px 0px;
 }
 
 nav a {
-    height: 100%;
-    font-family: "Montserrat";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
+    color: white;
+    margin: 0px 40px 0px 40px;
+    padding: 28px 0px 20px 0px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
 
-}
-
-nav a li {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0px 40px 0px 40px;
-    
+    transition: all ease-in-out 500ms;
 }
 
 nav a:hover {
-    color: rgb(83, 83, 83);
-    cursor: pointer;
+    border-bottom-color: #66FCF1;
+}
+
+.intro {
+    background-image: url("../../media/intro_pic.jpg");
+
+    /* Set a specific height */
+    height: 700px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.intro .inner_intro {
+    background-color: rgba(0, 0, 0, 0.884);
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.intro .content {
+    font-family: "Montserrat";
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.intro div.font1 {
+    font-size: 70px;
+    font-family: "Bebas Neue";
+    color: #66FCF1;
+}
+
+.intro div.font2 {
+    font-size: 100px;
+    font-family: "Bebas Neue";
+}
+
+.intro div.font2:after  {
+    content: " ";
+    height: 2px;
+    background-color: #66FCF1;
+    width: 100%;
+    display: block;
+}
+
+.intro .inner_intro button {
+    margin-top: 30px;
+    background-color: #ffffff00;
+    border: 4px solid #66FCF1;
+    color: white;
+    font-size: 20px;
+    font-family: "Montserrat";
+    font-weight: bold;
+
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+}
+
+.intro .inner_intro button:hover {
+    border-color: aliceblue;
+    color: #66FCF1;
 }
