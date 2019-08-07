@@ -5,7 +5,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 200%;
     width: 100%;
 
     background: black;
@@ -34,8 +34,10 @@ nav {
     align-items: center;
     justify-content: center;
     position: sticky;
-    z-index: 100;
-    top: 0;
+    position: -webkit-sticky;
+    z-index: 999;
+    top: 0px;
+    margin: 0;
 }
 
 nav a {
@@ -69,11 +71,6 @@ nav a:hover {
 
     margin: 0;
     padding: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }
 
 .intro .inner_intro {
@@ -130,4 +127,16 @@ nav a:hover {
 .intro .inner_intro button:hover {
     border-color: aliceblue;
     color: #66FCF1;
+    cursor: pointer;
+}
+
+main {
+    height: 1000px;
+    width: 100%;
+}
+
+.about_us {
+    height: 500px;
+    width: 100%;
+    background-color: #0b0c10;
 }
