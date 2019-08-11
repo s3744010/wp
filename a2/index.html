@@ -17,26 +17,49 @@
     <div>LUNARDO</div>
   </header>
 
-  <nav id= "navbar">
-    <a href="/">Home</a>K<
-    <a href="#">About Us</a>
-    <a href="#">Prices</a>
-    <a href="#">Now Showing</a>
+  <nav id="navbar">
+    <a href="#home">Home</a>
+    <a href="#about_us">About Us</a>
+    <a href="#prices">Prices</a>
+    <a href="#now_showing">Now Showing</a>
   </nav>
 
   <div class="intro">
-    <div class="inner_intro">
+    <div class="inner">
       <div class="content">
-        <div class="font1">Welcome</div>
-        <div class="font2">Future Cinematic</div>
+        <h1>Welcome</h1>
+        <h2>Future Cinematic</h2>
         <button onclick="scrollFunction">Now Showing</button>
       </div>
     </div>
   </div>
 
   <main>
-    <section class="about_us">
-      
+    <section id="about_us" class="about_us">
+      <div class="inner">
+        <div class="video_container">
+          <video autoplay="playsinline autoplay muted loop" loop="loop">
+            <source src="../../media/dolby-atmos-overview.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+          </video>
+          <div id="content_container" class="content_container">
+            <div class="content">
+              <h1>About Us</h1>
+              <p>The cinema has reopened after extensive improvements and renovations.<br>The projection and sound
+                systems are upgraded with<br><a onclick="fadeIn()">3D Dolby Vision projection and Dolby Atmos sound.</a></p>
+            </div>
+          </div>
+          <div class="chairs">
+            New Seats
+            <div class="first_class">
+              First Class
+            </div>
+            <div class="second_class">
+              Second Class
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class = "price_section">
@@ -145,16 +168,9 @@
     <!-- <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div> -->
   </footer>
 
+  <script src="script.js"></script>
   <script>
     window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 1)";
-      } else {
-        document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 0)";
-      }
-    }
   </script>
 
 </body>
