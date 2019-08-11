@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat"); 
-@import url("https://www.fontsquirrel.com/fonts/bebas-neue");
+@font-face {
+    src: url(../../fonts/Bebas_Neue.ttf);
+    font-family: Bebas Neue;
+}
 
 html, body {
     margin: 0;
@@ -100,7 +103,7 @@ nav a:hover {
     font-family: "Bebas Neue";
 }
 
-.intro div.font2:after  {
+.intro div.font2:after {
     content: " ";
     height: 2px;
     background-color: #66FCF1;
