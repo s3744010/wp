@@ -35,133 +35,51 @@
   </div>
 
   <main>
-    <section id="about_us" class="about_us">
-      <div class="inner">
-        <div class="video_container">
-          <video autoplay="playsinline autoplay muted loop" loop="loop">
-            <source src="../../media/dolby-atmos-overview.mp4" type="video/mp4">
-              Your browser does not support HTML5 video.
-          </video>
-          <div id="content_container" class="content_container">
+    <a id="about_us" class="about_us"></a>
+    <section class="about_us">
+      <div class="improvements_container">
+        <div class="inner">
+          <h1>About Us</h1>
+          <div class="content_container">
             <div class="content">
-              <h1>About Us</h1>
-              <p>The cinema has reopened after extensive improvements and renovations.<br>The projection and sound
-                systems are upgraded with<br><a>3D Dolby Vision projection and Dolby Atmos sound.</a></p>
+              <p>The cinema has reopened after extensive improvements and renovations. The projection and sound
+                systems are upgraded with 3D Dolby Vision projection and Dolby Atmos sound.</p>
+            </div>
+            <video autoplay="playsinline autoplay muted loop" loop="loop">
+              <source src="../../media/dolby-atmos-overview.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="seats_container">
+        <div class="inner">
+          <p>We have made improvements to the seats.</p>
+          <div class="standard_class">
+            <img src="../../media/standard_class.png" alt="Standard Class Seat">
+            <div class="content">
+              <h2>Standard</h2>
             </div>
           </div>
-          <div class="chairs">
-            New Seats
-            <div class="first_class">
-              First Class
-            </div>
-            <div class="second_class">
-              Second Class
+          <div class="first_class">
+            <img src="../../media/first_class.png" alt="First Class Seat">
+            <div class="content">
+              <h2>First Class</h2>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <section class="prices">
 
-    <section class = "price_section">
-      <div class ="price-section-full">
-       
-         <div class="price-content-container">
-
-          <div class="price-transparent-bg">
-              <div class= "header-box">
-                  <h1>Price</h1>
-                  <p>We offers discounted pricing weekday afternoons,and all day on Mondays and Wednesdays!</p>
-              </div> 
-                <div class="price-table">
-                  <div class="table-head">
-                    
-                    <table> 
-                    
-                      <tr>
-                        <th>Seat Type</th>
-                        <th>Seat Code</th>
-                        <th>Discounted</th>
-                        <th>Standard Price</th>
-                      </tr>
-                    </div>
-                  <div class="table-body">
-
-                      <tr>
-                          <th>Standard Adult</th>
-                          <td>STA</td>
-                          <td>14.00</td>
-                          <td>19.80</td>
-                        </tr>
-                          <th>Standard Consession</th>
-                          <td>STP</td>
-                          <td>12.50</td>
-                          <td>17.50</td>
-      
-                        <tr>
-      
-                        <tr>
-                          <th>Standard Child</th>
-                          <td>STC</td>
-                          <td>11.00</td>
-                          <td>15.30</td>
-                        </tr>
-      
-                        <tr>
-                          <th>First Class Adult</th>
-                          <td>FCA</td>
-                          <td>24.00</td>
-                          <td>30.00</td>
-                        </tr>
-      
-                        <tr>
-                          <th>First Class Consession</th>
-                          <td>FCP</td>
-                          <td>22.50</td>
-                          <td>27.00</td>
-                        </tr>
-      
-                        <tr>
-                          <th>First Class Child</th>
-                          <td>FCC</td>
-                          <td>21.00</td>
-                          <td>24.00</td>
-      
-      
-                        </tr>
-      
-                        </tr>
-                      
-                      </table>
-                  </div>
-  
-                    
-  
-                 
-  
-                  
-      
-        
-        
-        
-                </div>
-           </div>
-          </div>
-
-            
-        
-       
-    </div>
-
-      
     </section>
-    
   </main>
 
   <footer>
     <div>&copy;
       <script>
         document.write(new Date().getFullYear());
-      </script> Put your name(s), student number(s) and group name here. Last modified
+      </script> Teoh Jie Sheng (s3744010), Choong Wan Si (s3733738) and group name here. Last modified
       <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
     <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
       Programming course at RMIT University in Melbourne, Australia.</div>
@@ -170,7 +88,9 @@
 
   <script src="script.js"></script>
   <script>
-    window.onscroll = function () { scrollFunction() };
+    window.onscroll = function () {
+      scrollFunction();
+    };
   </script>
 
 </body>
