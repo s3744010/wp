@@ -188,6 +188,10 @@ a.about_us {
     overflow: hidden;
 }
 
+.about_us .inner .content_container video:hover {
+    border: 0.5px solid white;
+}
+
 .about_us .seats_container {
     margin: 0;
     width: 100%;
