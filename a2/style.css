@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat"); 
 @import url("https://fonts.googleapis.com/css?family=Blinker&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @font-face {
     src: url(../../fonts/Bebas_Neue.ttf);
     font-family: Bebas Neue;
@@ -15,23 +16,29 @@
 
 h1 {
     font-size: 90px;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     color: var(--main-cont-color);
     font-weight: 100;
     margin: 0;
 }
 
 h2 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 120px;
     color: white;
     font-weight: 100;
     margin: 0;
 }
 
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 0.8em;
+}
+
 p {
-    font-family: "Blinker", sans-serif;
-    font-size: 30px;
+    font-family: 'Blinker', sans-serif;
+    font-size: 1.4em;
     color: white;
     margin: 0;
     line-height: 1.4em;
@@ -52,7 +59,7 @@ body {
     padding: 0;
     height: auto;
     width: 100%;
-    background: var(--main-bg-color);
+    background: black;
 }
 
 header {
@@ -137,13 +144,14 @@ nav a:hover {
 }
 
 main {
-    height: 1250px;
+    height: auto;
     width: 100%;
 }
 
-a.about_us {
+#about_us {
     display: block;
     position: relative;
+    height: 0;
     top: -70px;
     visibility: hidden;
 }
@@ -151,114 +159,179 @@ a.about_us {
 .about_us {
     top: 0;
     width: 100%;
-    background-color: #000;
-}
-
-.about_us .improvements_container {
-    display: flex;
-    justify-content: center;
+    background-color: black;
+    height: 1000px;
 }
 
 .about_us .inner {
-    width: 75%;
-    height: 50%;
-    padding-top: 50px;
-}
-
-.about_us .inner h1 {
-    color: var(--main-cont-color);
-}
-
-.about_us .inner .content_container {
-    margin-top: 50px;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.about_us .inner .content_container .content {
-    float: left;
-    width: 35%;
+.about_us .gridContainer {
+    width: 80%;
     height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-auto-rows: 1fr; 
+    grid-gap: 10px;
+    padding: 10px;
 }
 
-.about_us .inner .content_container video {
-    float: right;
-    width: 65%;
-    overflow: hidden;
+.about_us .gridContainer .header {
+    grid-column-start: 1;
+    grid-column-end: 11;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding-top: 3em;
 }
 
-.about_us .inner .content_container video:hover {
+.about_us .gridContainer .main1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.about_us .gridContainer .video {
+    grid-column-start: 4;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.about_us .gridContainer .video video {
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+}
+
+.about_us .gridContainer .video video:hover {
     border: 0.5px solid white;
 }
 
-.about_us .seats_container {
-    margin: 0;
-    width: 100%;
+.about_us .gridContainer .main2 {
+    grid-column-start: 1;
+    grid-column-end: 11;
     display: flex;
-    justify-content: center;
+    text-align: left;
 }
 
-.about_us .seats_container .inner {
-    padding: 0;
-    margin: 0;
+.about_us .gridContainer .stdClass {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 8;
 }
 
-.about_us .seats_container .standard_class {
-    float: left;
-    width: 50%;
-    height: 500px;
-    position: relative;
+.about_us .gridContainer .stdClass .inner {
+    background-image: url(../../media/standard_class.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.about_us .seats_container .first_class {
-    float: right;
-    width: 50%;
-    height: 500px;
-    position: relative;
+.about_us .gridContainer .fstClass {
+    grid-column-start: 6;
+    grid-column-end: 11;
+    grid-row-start: 6;
+    grid-row-end: 8;
+    
 }
 
-img {
-    width: auto;
-    height: auto;
-    position: absolute;
+.about_us .gridContainer .fstClass .inner {
+    background-image: url(../../media/first_class.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.about_us .seats_container .content {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
+.about_us .gridContainer .content {
+    background-color: rgba(0, 0, 0, 0.75);
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: rgba(0, 0, 0, 0.75);
-    transition: all ease-in-out 200ms;
+    transition: opacity 500ms;
 }
 
-.about_us .seats_container .content:hover {
-    background-color: rgba(0, 0, 0, 0);
+.about_us .gridContainer .content:hover {
+    opacity: 0;
+    cursor: pointer;
 }
 
-.about_us .seats_container .content:hover > h2 { 
-    color: rgba(0, 0, 0, 0);
+.about_us .gridContainer h2{
+    font-size: 5em;
+    transition: all ease-in-out 500ms;
 }
-
 
 footer {
-    bottom: 0;
-    height: 100px;
+    background-color: black;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
 
-footer div{
-    font-family: "Blinker", sans-serif;
-    font-size: 10px;
+footer .inner {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 80%;
+    margin-top: 2em;
+}
+
+footer h1 {
+    font-weight: 0;
     color: white;
+    font-size: 2em;
+}
+
+footer p, a{
+    line-height: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    color: var(--main-font-color);
+    transition: all ease-in-out 300ms;
+}
+
+footer p:hover, a:hover {
+    color:white;
+    cursor: pointer;
+}
+
+footer #head h1{
+    padding-bottom: 0.6em;
+}
+
+footer #contact_details, #head{
+    width: 100%;
+}
+
+footer .verticle_block a{
+    display: block;
+    text-transform: none;
+}
+
+footer .verticle_block {
+    width: 100px;
+}
+
+footer .foot{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: var(--main-font-color);
     margin: 0;
-    line-height: 1.4em;
-    letter-spacing: 2px;
-    word-spacing: 2px;
+}
+
+footer #personal_details {
+    padding-top: 7em;
 }
 
 
