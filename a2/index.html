@@ -35,27 +35,44 @@
   </div>
 
   <main>
-    <section id="about_us" class="about_us">
+    <a id="about_us"></a>
+    <section class="about_us">
       <div class="inner">
-        <div class="video_container">
-          <video autoplay="playsinline autoplay muted loop" loop="loop">
-            <source src="../../media/dolby-atmos-overview.mp4" type="video/mp4">
+        <div class="gridContainer">
+          <div class="header">
+            <h1>About Us</h1>
+          </div>
+          <div class="main1">
+            <p>After taking into consideration your valuable feedback, we have finally reopened. The cinema has gone
+              through extensive renovations and countless improvements, and is now equipped with state of the art
+              projection and sound systems - 3D Dolby Vision projection and Dolby Atmos sound
+              Cinemas are now also furnished with brand new chairs, with the choice for an upgrade.
+            </p>
+          </div>
+          <div class="video">
+            <video controls>
+              <source src="../../media/dolby-atmos-overview.mp4" type="video/mp4">
               Your browser does not support HTML5 video.
-          </video>
-          <div id="content_container" class="content_container">
-            <div class="content">
-              <h1>About Us</h1>
-              <p>The cinema has reopened after extensive improvements and renovations.<br>The projection and sound
-                systems are upgraded with<br><a onclick="fadeIn()">3D Dolby Vision projection and Dolby Atmos sound.</a></p>
+            </video>
+          </div>
+          <div class="main2">
+            <p>Introducing the new First Class seating - fully reclinable with automated footrests. Available for twin
+              and single seating. Our new range of standard seating also comes with contoured backrests and fully
+              leathered headrests.</p>
+          </div>
+          <div class="stdClass">
+            <div class="inner">
+              <div class="content">
+                <h2>Standard</h2>
+              </div>
             </div>
           </div>
-          <div class="chairs">
-            New Seats
-            <div class="first_class">
-              First Class
-            </div>
-            <div class="second_class">
-              Second Class
+
+          <div class="fstClass">
+            <div class="inner">
+              <div class="content">
+                <h2>First Class</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -279,20 +296,61 @@
 
   </main>
 
-  <!-- <footer>
-    <div>&copy;
-      <script>
-        document.write(new Date().getFullYear());
-      </script> Put your name(s), student number(s) and group name here. Last modified
-      <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
-    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
-      Programming course at RMIT University in Melbourne, Australia.</div>
-     <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div> 
-  </footer>  -->
+    </section>
+    <section class="prices">
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div id="head" class="verticle_block">
+        <h1>LUNARDO</h1>
+        <p>We make connections.<br> This is your Future Cinematic.</p>
+      </div>
+      <div id="explore" class="verticle_block">
+        <h3>Explore</h3>
+        <a>Home</a>
+        <a>About Us</a>
+        <a>Prices</a>
+        <a>Now Showing</a>
+        <a>Book A Ticket</a>
+      </div>
+      <div id="contact_details" class="verticle_block">
+        <h3>Visit</h3>
+        <p>2573 Lang Avenue, Portage,<br>UT, Utah, 84331</p>
+        <h3>Contact</h3>
+        <p>435-866-0270</p>
+        <p>lunardo_cinemas@gmail.com</p>
+      </div>
+      <div id="follow" class="verticle_block">
+        <h3>Follow</h3>
+        <a>Instagram</a>
+        <a>Facebook</a>
+        <a>Twitter</a>
+      </div>
+      <div id="legal" class="verticle_block">
+        <h3>Legal</h3>
+        <a>Terms</a>
+        <a>Privacy</a>
+      </div>
+
+      <div id="personal_details" class="foot">&copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script> Teoh Jie Sheng (s3744010), Choong Wan Si (s3733738) and group name here. Last modified
+        <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+      <div class="foot">Disclaimer: This website is not a real website and is being developed as part of a School of Science Web
+        Programming course at RMIT University in Melbourne, Australia.</div>
+    </div>
+    <!-- <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div> -->
+  </footer>
 
   <script src="script.js"></script>
   <script>
-    window.onscroll = function () { scrollFunction() };
+    window.onscroll = function () {
+      scrollFunction();
+    };
   </script>
 
 </body>

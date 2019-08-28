@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat"); 
+@import url("https://fonts.googleapis.com/css?family=Blinker&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @font-face {
     src: url(../../fonts/Bebas_Neue.ttf);
     font-family: Bebas Neue;
@@ -14,22 +16,34 @@
 
 h1 {
     font-size: 90px;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     color: var(--main-cont-color);
     font-weight: 100;
     margin: 0;
 }
 
 h2 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 120px;
     color: white;
     font-weight: 100;
     margin: 0;
 }
 
-p {
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 0.8em;
+}
 
+p {
+    font-family: 'Blinker', sans-serif;
+    font-size: 1.4em;
+    color: white;
+    margin: 0;
+    line-height: 1.4em;
+    letter-spacing: 2px;
+    word-spacing: 2px;
 }
 
 a {
@@ -45,7 +59,7 @@ body {
     padding: 0;
     height: auto;
     width: 100%;
-    background: var(--main-bg-color);
+    background: black;
 }
 
 header {
@@ -130,77 +144,82 @@ nav a:hover {
 }
 
 main {
-    height: 1000px;
+    height: auto;
     width: 100%;
 }
 
+#about_us {
+    display: block;
+    position: relative;
+    height: 0;
+    top: -70px;
+    visibility: hidden;
+}
 
 
 .about_us {
-    height: 1000px;
+    top: 0;
     width: 100%;
-    background-color: var(--main-bg-color);
+    background-color: black;
+    height: 1000px;
 }
 
 .about_us .inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about_us .inner .video_container{
-    content: ' ';
-    display: block;
     width: 100%;
-    height: 720px;
+    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-video {
-    margin: 0 auto;
+.about_us .gridContainer {
     width: 80%;
-    min-height: 500px;
-    width: auto;
-    height: auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-auto-rows: 1fr; 
+    grid-gap: 10px;
+    padding: 10px;
 }
 
-.about_us .inner .content_container {
-    position: absolute;
+.about_us .gridContainer .header {
+    grid-column-start: 1;
+    grid-column-end: 11;
     display: flex;
     align-items: center;
-    justify-content: center;    
-    background-color: rgba(0, 0, 0, 0.90);
-    content: '';
-    z-index: 2;
+    text-align: left;
+    padding-top: 3em;
+}
+
+.about_us .gridContainer .main1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.about_us .gridContainer .video {
+    grid-column-start: 4;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.about_us .gridContainer .video video {
     width: 100%;
-    height: inherit;
-
-    transition: all ease-in-out 250ms;
+    height: 100%;
+    padding: 1px;
 }
 
-.about_us .inner .content {
-    color: rgb(224, 224, 224);
+.about_us .gridContainer .video video:hover {
+    border: 0.5px solid white;
 }
 
-.about_us .inner .content h1 {
+.about_us .gridContainer .main2 {
+    grid-column-start: 1;
+    grid-column-end: 11;
+    display: flex;
     text-align: left;
-    font-size: 100px;
-    margin: 0;
-    font-family: "Bebas Neue";
-}
-
-.about_us .inner .content p {
-    text-align: left;
-    font-family: "Montserrat";
-    font-size: 25px;
-}
-
-.about_us .inner .content a {
-    font-size: 60px;
-    font-family: "Bebas Neue";
-    color: #66FCF1;
 }
 
 .about_us .inner .content a:hover {
@@ -407,10 +426,72 @@ video {
 
 
 .synopsis{
-
     height: auto;
     width: auto;
+}
 
+.about_us .gridContainer .stdClass {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.about_us .gridContainer .stdClass .inner {
+    background-image: url(../../media/standard_class.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about_us .gridContainer .fstClass {
+    grid-column-start: 6;
+    grid-column-end: 11;
+    grid-row-start: 6;
+    grid-row-end: 8;
+    
+}
+
+.about_us .gridContainer .fstClass .inner {
+    background-image: url(../../media/first_class.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about_us .gridContainer .content {
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 500ms;
+}
+
+.about_us .gridContainer .content:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.about_us .gridContainer h2{
+    font-size: 5em;
+    transition: all ease-in-out 500ms;
+}
+
+footer {
+    background-color: black;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+footer .inner {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 80%;
+    margin-top: 2em;
 }
 
 .synopsis .inner{
@@ -501,14 +582,53 @@ video {
 
 
 
+footer h1 {
+    font-weight: 0;
+    color: white;
+    font-size: 2em;
+}
 
+footer p, a{
+    line-height: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    color: var(--main-font-color);
+    transition: all ease-in-out 300ms;
+}
 
+footer p:hover, a:hover {
+    color:white;
+    cursor: pointer;
+}
 
+footer #head h1{
+    padding-bottom: 0.6em;
+}
 
+footer #contact_details, #head{
+    width: 100%;
+}
 
+footer .verticle_block a{
+    display: block;
+    text-transform: none;
+}
 
+footer .verticle_block {
+    width: 100px;
+}
 
+footer .foot{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: var(--main-font-color);
+    margin: 0;
+}
 
-
+footer #personal_details {
+    padding-top: 7em;
+}
 
 
