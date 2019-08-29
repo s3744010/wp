@@ -89,7 +89,7 @@ nav {
 
 nav a {
     margin: 0px 40px 0px 40px;
-    padding: 28px 0px 20px 0px;
+    padding: 21px 0px 21px 0px;
     border-bottom: 3px solid rgba(0, 0, 0, 0);
     transition: all ease-in-out 500ms;
 }
@@ -156,12 +156,13 @@ main {
     visibility: hidden;
 }
 
-
 .about_us {
     top: 0;
     width: 100%;
     background-color: black;
-    height: 1000px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 .about_us .inner {
@@ -188,7 +189,6 @@ main {
     display: flex;
     align-items: center;
     text-align: left;
-    padding-top: 3em;
 }
 
 .about_us .gridContainer .main1 {
@@ -209,6 +209,8 @@ main {
     width: 100%;
     height: 100%;
     padding: 1px;
+    border: 0.5px solid rgba(255, 255, 255, 0);
+    outline: none;
 }
 
 .about_us .gridContainer .video video:hover {
@@ -226,209 +228,6 @@ main {
     color: #45A29E;
     cursor: pointer;
 } 
-
-
-
-.price {
-    height: auto;
-    width: auto;
-    background-image: url(../../media/blue-movie.jpg);
-    height: 600px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.price .inner{
-    width: 100%;
-    display:flex;
-    justify-content: center;
-    align-content: center;
-   
-
-    
-}
-
-.price .inner .content{
-    height: auto;
-    width: 80%;
-    
-
-    
-}
-
-.price .inner .heading p{
-    font-size:20px;
-    font-family:"Bebas Neue";
-    color: var(--main-font-color);
-}
-
-.price .inner table {
-    border-collapse: collapse;
-    width: 100%;
-    height: 400px;
-    box-shadow: 0 0 10px 2px #f5f5f5;
-    
-}
-
-  .price .inner table th {
-    background-color: var(--main-bg-color);
-}
-  
-.price .inner table th, td  {
-
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-}
-
-.price .inner tr{
-    padding: 15px;
-    color: var(--main-font-color);
-    display: table-row;
-}
-  
-.price tr :hover {
-    
-    background-color:#f5f5f5;} 
-
-.price tr:hover {
-    
-    color: black;
-    
-} 
-    
-
-
-.now_showing{
-
-    height: auto;
-    width: auto;
-    
-}
-
-
-
-.now_showing .inner {
-
-    padding: 125px;
-    height : auto;
-    width: 80%;
-    
-
-}
-
-
-
-.now_showing .inner .movie-container{
-
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 50px;
-    grid-column-gap: 50px;
-    grid-auto-rows:minmax(400px ,auto);
-    margin: 10px;
-   
-   
-    
-}
-
-@media only screen and (max-width: 800px) {
-    .now_showing .inner .movie-container { grid-template-columns: 1fr }
-  }
-
-
-
-.now_showing .inner .movie-container .movie{
-
-
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7 ,1fr);
-    grid-gap: 15px;
-    
-
-}
-
-.now_showing .inner .movie-container .movie{
-
-    background-color: var(--main-bg-color);
-    border: 1px solid var(--main-cont-color);
-    padding: 0px;
-    font-size: 15px;
-    color: var(--main-font-color);
-    text-align: center;
-    
-
-} 
-
-.poster {
-    
-
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 8;
-
-
-}
-
-.poster .img img {
- 
-    width: 100%;
-    height: 100%;
-    
-
-}
-
-.title {
-
-    background-color: var(--main-bg-color);
-    grid-column-start: 5;
-    grid-column-end:8;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    
-}
-
-.title p{
-    font-size: 30px;
-    font-family: "Bebas Neue", sans-serif;
-
-}
-
-
-
-.time{
-
-    grid-column-start: 5;
-    grid-column-end: 8;
-    grid-row-start: 3;
-    grid-row-end: 8;
-    
-    background-color: var(--main-bg-color);
- 
-  
-}
-
-.time div{
-
-    font-size: 20px;
-    font-family: "Bebas Neue", sans-serif;
-    padding: 10px;
-    text-align: center;
-}
-
-
-
-.synopsis{
-    height: auto;
-    width: auto;
-}
 
 .about_us .gridContainer .stdClass {
     grid-column-start: 1;
@@ -479,6 +278,257 @@ main {
     transition: all ease-in-out 500ms;
 }
 
+
+.price {
+    height: auto;
+    width: auto;
+    background-image: url(../../media/blue-movie.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.price .inner{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-content: center;    
+}
+
+.price .inner .content{
+    height: auto;
+    width: 80%;
+}
+
+.price .heading {
+    padding-bottom: 20px;  
+}
+
+.price .inner .heading p{
+    font-size:20px;
+    font-family:"Bebas Neue";
+    color: var(--main-font-color);
+}
+
+.price .inner table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 400px;
+    box-shadow: 0 0 10px 2px #f5f5f5b2;
+}
+
+.price .inner table th {
+    background-color: var(--main-bg-color);
+}
+  
+.price .inner table th, td  {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+}
+
+.price .inner tr{
+    padding: 15px;
+    color: var(--main-font-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table-row;
+}
+
+.price tr:hover {
+    background-color:#f5f5f5;
+}
+
+.price tr:first-child:hover {
+    color: var(--main-font-color);
+} 
+
+.price tr:hover {
+    color: black;
+}
+
+.now_showing{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5em 0em 5em 0em;
+}
+
+.now_showing .inner {
+    height: auto;
+    width: 80%;
+}
+
+.now_showing .inner .movie-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .now_showing .inner .movie-container { grid-template-columns: 1fr }
+}
+
+.now_showing .inner .movie-container .movie{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7 ,1fr);
+    grid-gap: 15px;
+}
+
+.now_showing .inner .movie-container .movie{
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--main-cont-color);
+    padding: 0px;
+    color: var(--main-font-color);
+    text-align: center;
+} 
+
+.poster {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 8;
+}
+
+.poster .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    background-color: var(--main-bg-color);
+    grid-column-start: 5;
+    grid-column-end:8;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.title p{
+    font-size: 30px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+
+
+.time{
+    grid-column-start: 5;
+    grid-column-end: 8;
+    grid-row-start: 3;
+    grid-row-end: 8;
+
+    background-color: var(--main-bg-color);
+}
+
+.time div{
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+.synopsis{
+    background: linear-gradient(var(--secondary-bg-color), black 10%, black 90%, var(--secondary-bg-color));
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+.synopsis .inner{
+    display: block;
+    padding: 100px;
+    height : auto;
+    width: 80%;
+   
+}
+.synopsis .inner .endgame
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    margin-bottom: 2em;
+}
+
+.synopsis .inner .plot{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.synopsis .inner .trailer{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+.synopsis .inner .trailer iframe {
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: border 250ms;
+}
+
+.synopsis .inner .trailer iframe:hover {
+    border: 1px solid rgba(255, 255, 255);
+}
+
+
+.synopsis .inner .booking p {
+    font-size: 20px;
+    color: var(--main-font-color);
+    font-family: "Montserrat", sans-serif;
+}
+
+.synopsis .inner .plot h2 {
+    font-size: 40px;
+}
+
+.synopsis .inner .plot p{
+    font-size: 20px;
+    color: var(--main-font-color);
+    font-family: "Montserrat", sans-serif;
+}
+
+.synopsis .inner .booking .time {
+    margin-top: 30px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    color: var(--main-font-color);
+}
+
+.synopsis .inner .booking .time div{
+    display: flex;
+    width: 80%;
+    margin: 3px;
+    padding: 20px;
+    justify-content: center;
+    border: 1px solid var(--main-cont-color);
+    align-items: center;
+}
+
+.synopsis .inner .booking .time div:hover 
+{
+    background-color: var(--main-cont-color);
+    color: black;
+    cursor: pointer;
+} 
+
 footer {
     background-color: black;
     height: 400px;
@@ -493,94 +543,6 @@ footer .inner {
     width: 80%;
     margin-top: 2em;
 }
-
-.synopsis .inner{
-
-    display: block;
-    padding: 100px;
-    height : auto;
-    width: 80%;
-   
-}
-.synopsis .inner .endgame
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-}
-
-.synopsis .inner .plot{
-   
-    grid-column-start: 1;
-    grid-column-end: 2;
-    
-
-}
-
-.synopsis .inner .trailor{
-    
-    grid-column-start: 2;
-    grid-column-end: 3;
-    text-align: center;
-   
-
-}
-.synopsis .inner .booking p {
-
-    font-size: 20px;
-    color: var(--main-font-color);
-    font-family: "Montserrat", sans-serif;
-
-}
-
-.synopsis .inner .plot h2 {
-
-    font-size: 40px;
-    
-}
-
-.synopsis .inner .plot p{
-
-    font-size: 20px;
-    color: var(--main-font-color);
-    font-family: "Montserrat", sans-serif;
-   
-}
-
-.synopsis .inner .booking .time {
-
-    width: 100%;
-    height: 70px;
-    display: flex;
-    color: var(--main-font-color);
-  
-}
-
-.synopsis .inner .booking .time div{
-
-    display: flex;
-    width: 80%;
-    margin: 3px;
-    padding: 20px;
-    justify-content: center;
-    border: 1px solid var(--main-cont-color);
-    align-items: center;
-
-}
-
-.synopsis .inner .booking .time div:hover 
-{
-    background-color: var(--main-cont-color);
-} 
-
-.synopsis .inner .booking .time div:hover 
-{
-    color: black;
-} 
-
-
-
-
 
 footer h1 {
     font-weight: 0;
