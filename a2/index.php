@@ -301,7 +301,7 @@
       <div id="personal_details" class="foot">&copy;
         <script>
           document.write(new Date().getFullYear());
-        </script> Teoh Jie Sheng (s3744010), Choong Wan Si (s3733738) | C-TEAM. Last modified
+        </script> Teoh Jie Sheng (s3744010), Choong Wan Si (s3733738) | A2-s3744010-s3733738. Last modified
         <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
       <div class="foot">Disclaimer: This website is not a real website and is being developed as part of a School of
         Science Web
