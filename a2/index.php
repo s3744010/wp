@@ -295,7 +295,8 @@
         <a>Terms</a>
         <a>Privacy</a>
       </div>
-
+      
+      <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
       <div id="personal_details" class="foot">&copy;
         <script>
           document.write(new Date().getFullYear());
@@ -305,7 +306,6 @@
         Science Web
         Programming course at RMIT University in Melbourne, Australia.</div>
     </div>
-    <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
   </footer>
 
   <script src="script.js"></script>
