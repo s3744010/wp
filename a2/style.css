@@ -584,6 +584,7 @@ footer #head h1{
 
 footer #contact_details, #head{
     width: 100%;
+    padding-bottom: 3em;
 }
 
 footer .verticle_block a{
@@ -609,14 +610,15 @@ footer #personal_details {
 }
 
 footer button {
-    background-color: #555555;
+    background-color: black;
     color:white;
-    border: 2px solid rgba(255, 255, 255, 0);
-    transition: border 250ms;
+    border: 2px solid white;
+    transition: border 300ms;
 }
 
 footer button:hover {
-    border: 2px solid white;
+    color: black;
+    background-color: white;
 }
 
 
