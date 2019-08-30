@@ -270,7 +270,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 500ms;
+    transition: opacity ease-in-out 500ms;
 }
 
 .about_us .gridContainer .content:hover {
@@ -491,7 +491,7 @@ main {
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0);
     padding: 1px;
-    transition: border 250ms;
+    transition: border ease-in-out 250ms;
 }
 
 .synopsis .inner .trailer iframe:hover {
@@ -613,7 +613,7 @@ footer button {
     background-color: black;
     color:white;
     border: 2px solid white;
-    transition: border 300ms;
+    transition: border ease-in-out 300ms;
 }
 
 footer button:hover {
