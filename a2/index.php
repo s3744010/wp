@@ -8,7 +8,8 @@
 
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-  <link id='stylecss' type="text/css" rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
+  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script>
   <script src='../wireframe.js'></script>
 </head>
 
@@ -295,7 +296,7 @@
         <a>Terms</a>
         <a>Privacy</a>
       </div>
-      
+
       <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
       <div id="personal_details" class="foot">&copy;
         <script>
