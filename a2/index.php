@@ -305,7 +305,7 @@
         Science Web
         Programming course at RMIT University in Melbourne, Australia.</div>
     </div>
-    <!-- <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div> -->
+    <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
   </footer>
 
   <script src="script.js"></script>
