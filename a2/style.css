@@ -54,12 +54,24 @@ a {
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
     height: auto;
     width: 100%;
     background: black;
+}
+
+.section_anchors {
+    display: block;
+    position: relative;
+    height: 0;
+    top: -70px;
+    visibility: hidden;
 }
 
 header {
@@ -140,20 +152,13 @@ nav a:hover {
 
 .intro .inner button:hover {
     border-color: aliceblue;
+    cursor: pointer;
     color: rgb(38, 226, 214);
 }
 
 main {
     height: auto;
     width: 100%;
-}
-
-#about_us {
-    display: block;
-    position: relative;
-    height: 0;
-    top: -70px;
-    visibility: hidden;
 }
 
 .about_us {
@@ -278,7 +283,6 @@ main {
     transition: all ease-in-out 500ms;
 }
 
-
 .price {
     height: auto;
     width: auto;
@@ -352,6 +356,10 @@ main {
     color: black;
 }
 
+#now_showing {
+    top: -69px;
+}
+
 .now_showing{
     height: auto;
     width: auto;
@@ -389,6 +397,7 @@ main {
 .now_showing .inner .movie-container .movie{
     background-color: var(--main-bg-color);
     border: 1px solid var(--main-cont-color);
+    grid-template-rows: 1fr 7fr;
     padding: 0px;
     color: var(--main-font-color);
     text-align: center;
@@ -398,7 +407,7 @@ main {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 1;
-    grid-row-end: 8;
+    grid-row-end: 3;
 }
 
 .poster .img img {
@@ -410,8 +419,8 @@ main {
     background-color: var(--main-bg-color);
     grid-column-start: 5;
     grid-column-end:8;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    justify-content: center;
+    align-items: center;
 }
 
 .title p{
@@ -419,15 +428,18 @@ main {
     font-family: "Bebas Neue", sans-serif;
 }
 
-
-
 .time{
     grid-column-start: 5;
     grid-column-end: 8;
-    grid-row-start: 3;
-    grid-row-end: 8;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--main-bg-color);
+}
+
+.time .inner {
+    display: table;
+    padding-bottom: 3em;
 }
 
 .time div{
@@ -436,8 +448,6 @@ main {
     padding: 10px;
     text-align: center;
 }
-
-
 
 .synopsis{
     background: linear-gradient(var(--secondary-bg-color), black 10%, black 90%, var(--secondary-bg-color));
@@ -480,6 +490,7 @@ main {
     height: 100%;
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0);
+    padding: 1px;
     transition: border 250ms;
 }
 
@@ -550,7 +561,7 @@ footer h1 {
     font-size: 2em;
 }
 
-footer p, a{
+footer p, a {
     line-height: 25px;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.8em;
@@ -558,7 +569,11 @@ footer p, a{
     transition: all ease-in-out 300ms;
 }
 
-footer p:hover, a:hover {
+footer p:hover {
+    color:white;
+}
+
+footer a:hover {
     color:white;
     cursor: pointer;
 }
