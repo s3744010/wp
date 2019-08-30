@@ -609,7 +609,6 @@ footer #personal_details {
 }
 
 footer button {
-    padding-top: 6em;
     background-color: #555555;
     color:white;
     border: 2px solid rgba(255, 255, 255, 0);
