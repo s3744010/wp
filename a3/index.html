@@ -8,8 +8,10 @@
 
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-  <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
-  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script>
+  <link rel='stylesheet' type="text/css" href="style.css">
+  <script src="script.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
+  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script> -->
   <script src='../wireframe.js'></script>
 </head>
 
@@ -20,7 +22,7 @@
   </header>
 
   <nav id="navbar">
-    <a href="#home">Home</a>
+    <a href="#home" class="active">Home</a>
     <a href="#about_us">About Us</a>
     <a href="#price">Prices</a>
     <a href="#now_showing">Now Showing</a>
@@ -309,10 +311,19 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
   <script>
     window.onscroll = function () {
-      scrollFunction();
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var navbar = document.getElementById('navbar').getElementsByTagName('a');
+      if (scrollTop < 702) {
+        turnActive(navbar[0]);
+      } else if (scrollTop >= 702 && scrollTop < 2042) {
+        turnActive(navbar[1]);
+      } else if (scrollTop >= 2042 && scrollTop < 2765) {
+        turnActive(navbar[2]);
+      } else if (scrollTop >= 2765) {
+        turnActive(navbar[3]);
+      }
     };
   </script>
 

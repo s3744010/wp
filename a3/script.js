@@ -1,8 +1,9 @@
-/* Insert your javascript here */
-function scrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 1)";
-    } else {
-        document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 0)";
-    }
+function turnActive(element) {
+    // document.body.style.backgroundColor = "red";
+    var navbar = document.getElementById('navbar').getElementsByTagName('a');
+
+    [].forEach.call(navbar, function(el) {
+        el.classList.remove("active");
+    });
+    element.classList.add("active");
 }

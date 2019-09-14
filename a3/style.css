@@ -90,6 +90,7 @@ header div {
 
 nav {
     height: 70px;
+    background: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,10 +104,14 @@ nav a {
     margin: 0px 40px 0px 40px;
     padding: 21px 0px 21px 0px;
     border-bottom: 3px solid rgba(0, 0, 0, 0);
-    transition: all ease-in-out 500ms;
+    transition: color ease-in-out 250ms;
 }
 
 nav a:hover {
+    color: white;
+}
+
+nav a.active {
     border-bottom-color: #66FCF1;
 }
 
