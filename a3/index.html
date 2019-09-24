@@ -8,8 +8,10 @@
 
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-  <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
-  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script>
+  <link rel='stylesheet' type="text/css" href="style.css">
+  <script src="script.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
+  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script> -->
   <script src='../wireframe.js'></script>
 </head>
 
@@ -20,7 +22,7 @@
   </header>
 
   <nav id="navbar">
-    <a href="#home">Home</a>
+    <a href="#home" class="active">Home</a>
     <a href="#about_us">About Us</a>
     <a href="#price">Prices</a>
     <a href="#now_showing">Now Showing</a>
@@ -143,110 +145,152 @@
 
         <h1>Now Showing</h1>
         <div class="movie-container">
+          <a id="avengers_link" href="#synopsis" onclick="movieOption(this)">
+            <div class="movie">
+              <div class="poster">
+                <div class="img">
+                  <img src="../../media/avengers.jpg" alt="Image 1">
+                </div>
+              </div>
+              <div class="title">
+                <p>Avengers: End Game</p>
+              </div>
+              <div class="time">
+                <div class="inner">
+                  <div>Wed - 9PM </div>
+                  <div>Thurs - 9PM </div>
+                  <div>Fri - 9PM </div>
+                  <div>Sat - 6PM </div>
+                  <div>Sun - 6PM </div>
+                </div>
+              </div>
+            </div>
+            <div class="plot_description">
+              Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply
+              starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce
+              Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos --
+              the evil demigod who decimated the planet and the universe.
+            </div>
+            <div class="trailer">
+              <div class="videoWrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </a>
 
-          <div class="movie">
-            <div class="poster">
-              <div class="img">
-                <img src="../../media/avengers.jpg" alt="Image 1">
+          <a id="top-end-wedding_link" href="#synopsis" onclick="movieOption(this)">
+            <div class="movie">
+              <div class="poster">
+                <div class="img">
+                  <img src="../../media/top-end-wedding.jpeg" alt="Image 2">
+                </div>
+              </div>
+              <div class="title">
+                <p>Top End Wedding</p>
+              </div>
+              <div class="time">
+                <div class="inner">
+                  <div>Mon - 6PM </div>
+                  <div>Tues - 6PM </div>
+                  <div>Sat - 3PM </div>
+                  <div>Sun - 3PM </div>
+                </div>
               </div>
             </div>
-            <div class="title">
-              <p>Avengers: End Game</p>
+            <div class="plot_description">
+              Lauren and Ned have 10 days to find Lauren's mother who has gone AWOL in the remote far north of Australia
+              so that they can reunite her parents and pull off their dream wedding.
             </div>
-            <div class="time">
-              <div class="inner">
-                <div>Wed - 9PM </div>
-                <div>Thurs - 9PM </div>
-                <div>Fri - 9PM </div>
-                <div>Sat - 6PM </div>
-                <div>Sun - 6PM </div>
+            <div class="trailer">
+              <div class="videoWrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
+            </div>
+          </a>
 
-            </div>
-          </div>
-          <div class="movie">
-            <div class="poster">
-              <div class="img">
-                <img src="../../media/top-end-wedding.jpeg" alt="Image 2">
+          <a id="dumbo_link" href="#synopsis" onclick="movieOption(this)">
+            <div class="movie">
+              <div class="poster">
+                <div class="img">
+                  <img src="../../media/dumbo.jpg" alt="Image 3">
+                </div>
+              </div>
+              <div class="title">
+                <p>Dumbo</p>
+              </div>
+              <div class="time">
+                <div class="inner">
+                  <div>Mon - 12PM </div>
+                  <div>Tues - 12PM </div>
+                  <div>Wed - 6PM </div>
+                  <div>Thurs - 6PM </div>
+                  <div>Fri - 6PM </div>
+                  <div>Sat - 12PM </div>
+                  <div>Sun - 12PM </div>
+                </div>
               </div>
             </div>
-            <div class="title">
-              <p>Top End Wedding</p>
+            <div class="plot_description">
+              A young elephant, whose oversized ears enable him to fly, helps save a struggling circus, but when the
+              circus plans a new venture, Dumbo and his friends discover dark secrets beneath its shiny veneer.
             </div>
-            <div class="time">
-              <div class="inner">
-                <div>Mon - 6PM </div>
-                <div>Tues - 6PM </div>
-                <div>Sat - 3PM </div>
-                <div>Sun - 3PM </div>
+            <div class="trailer">
+              <div class="videoWrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7NiYVoqBt-8" frameborder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
+            </div>
+          </a>
 
-            </div>
-          </div>
-          <div class="movie">
-            <div class="poster">
-              <div class="img">
-                <img src="../../media/dumbo.jpg" alt="Image 3">
+          <a id="happy-prince_link" href="#synopsis" onclick="movieOption(this)">
+            <div class="movie">
+              <div class="poster">
+                <div class="img">
+                  <img src="../../media/theHappyPrince.jpg" alt="Image 4">
+                </div>
+              </div>
+              <div class="title">
+                <p>The Happy Prince</p>
+              </div>
+              <div class="time">
+                <div class="inner">
+                  <div>Wed - 12PM </div>
+                  <div>Thurs - 12PM </div>
+                  <div>Fri - 12PM </div>
+                  <div>Sat - 9PM </div>
+                  <div>Sun - 9PM </div>
+                </div>
               </div>
             </div>
-            <div class="title">
-              <p>Dumbo</p>
+            <div class="plot_description">
+              His body ailing, Oscar Wilde lives out his last days in exile, observing the difficulties and failures
+              surrounding him with ironic detachment, humour, and the wit that defined his life.
             </div>
-            <div class="time">
-              <div class="inner">
-                <div>Mon - 12PM </div>
-                <div>Tues - 12PM </div>
-                <div>Wed - 6PM </div>
-                <div>Thurs - 6PM </div>
-                <div>Fri - 6PM </div>
-                <div>Sat - 12PM </div>
-                <div>Sun - 12PM </div>
+            <div class="trailer">
+              <div class="videoWrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tXANCJQkUIE" frameborder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
-          </div>
-          <div class="movie">
-            <div class="poster">
-              <div class="img">
-                <img src="../../media/theHappyPrince.jpg" alt="Image 4">
-              </div>
-            </div>
-            <div class="title">
-              <p>The Happy Prince</p>
-            </div>
-            <div class="time">
-              <div class="inner">
-                <div>Wed - 12PM </div>
-                <div>Thurs - 12PM </div>
-                <div>Fri - 12PM </div>
-                <div>Sat - 9PM </div>
-                <div>Sun - 9PM </div>
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
+    <a id="synopsis" class="section_anchors"></a>
     <section class="synopsis">
       <div class="inner">
         <div class="synoposis-container">
-          <div class="endgame">
-            <h1>Avengers: End Game</h1>
+          <div class="movie">
+            <h1></h1>
             <div class="plot">
               <h2>Plot Description</h2>
-              <p>
-                Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply
-                starts to dwindle.
-                Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure
-                out a way to bring back
-                their vanquished allies for an epic showdown with Thanos --
-                the evil demigod who decimated the planet and the universe.
-              </p>
+              <p></p>
             </div>
-            <div class="trailer">
-              <iframe frameBorder="0" src="https://www.youtube.com/embed/TcMBFSGVi1c">
-              </iframe>
-            </div>
+            <div class="trailer"></div>
           </div>
 
           <div class="booking">
@@ -309,10 +353,20 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
   <script>
     window.onscroll = function () {
-      scrollFunction();
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var windowHeight = window.screen.height;
+      var navbar = document.getElementById('navbar').getElementsByTagName('a');
+      if (scrollTop < 701) {
+        turnActive(navbar[0]);
+      } else if (scrollTop >= (windowHeight * 701 / 1080) && scrollTop < (windowHeight * 2180 / 1080)) {
+        turnActive(navbar[1]);
+      } else if (scrollTop >= (windowHeight * 2180 / 1080) && scrollTop < (windowHeight * 2875 / 1080)) {
+        turnActive(navbar[2]);
+      } else if (scrollTop >= (windowHeight * 2875 / 1080)) {
+        turnActive(navbar[3]);
+      }
     };
   </script>
 
