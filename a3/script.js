@@ -34,25 +34,71 @@ function movieOption(element) {
 function openBookingForm(element){
     var title = document.querySelector(".synopsis .movie h1").innerHTML;
     var day = element.querySelector("div").innerHTML.substring(0, 4);
-    var time = element.querySelector("div").innerHTML.substring(6, 10);
-    document.querySelector(".booking-form .form h1").innerHTML = title + "-" + day + "-" + time;
+    var hour = element.querySelector("div").innerHTML.substring(6, 10);
+
+    var spanTagDay = document.createElement('span');
+    spanTagDay.setAttribute("id", "day");
+    spanTagDay.innerHTML = day;
+    var spanTagHour = document.createElement('span');
+    spanTagHour.setAttribute("id", "hour");
+    spanTagHour.innerHTML = hour;
+    document.querySelector(".booking-form .form h1").innerHTML = title + "-";
+    document.querySelector(".booking-form .form h1").appendChild(spanTagDay);
+    document.querySelector(".booking-form .form h1").innerHTML += "-";
+    document.querySelector(".booking-form .form h1").appendChild(spanTagHour);
+
 }
 
-// function calc(){
+function calculateTotal() {
+    var seatPrices = {
+        full: {
+            FCA: 30.00,
+            FCP: 27.00,
+            FCC: 24.00,
+            STA: 19.80,
+            STP: 17.50,
+            STC: 15.30,
+        },
+        discount: {
+            FCA: 24.00,
+            FCP: 22.50,
+            FCC: 21.00,
+            STA: 14.00,
+            STP: 12.50,
+            STC: 11.00,
+        }
+    }
 
-//     var quantity = document.getElementById("quantity").value;
-//     if(quantity>0){
+    function isFullOrDiscount(day, hour) {
+        var ret = "full";
+        if (hour == "12pm") {
+            if (day != 'Sat' && day != 'Sun')
+                ret = "discount";
+        }
+        return ret;
+    }
 
-//         var price = document.getElementById("ticket-price").innerHTML;
-//         var total = price * quantity;
-//     }
+    function calcResult() {
+        var qtySeats = {
+            FCA: document.getElementById('FCA').value,
+            FCP: document.getElementById('FCP').value,
+            FCC: document.getElementById('FCC').value,
+            STP: document.getElementById('STP').value,
+            STA: document.getElementById('STA').value,
+            STC: document.getElementById('STC').value,
+        };
+        var fod = isFullOrDiscount(document.getElementById("day").innerHTML, document.getElementById("hour").innerHTML);
+        var total = 0;
+        for (seatCode in qtySeats) {
+            total += qtySeats[seatCode] * seatPrices[fod][seatCode];
+        }
+        document.getElementById("totalPrice").innerHTML = total;
+    }
+    calcResult();
+}
 
-//     document.getElementById("Price").innerHTML = salePrice.toFixed(2)
-
-// }
-
-$days = ['MON','TUE', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
-$hours = [ 'T12', 'T15', 'T18', 'T21', 'T00' ]; 
+// $days = ['MON','TUE', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
+// $hours = [ 'T12', 'T15', 'T18', 'T21', 'T00' ]; 
 
 // foreach ( $days as $day ) {
 //   foreach ( $hours as $hour ) {
@@ -60,16 +106,6 @@ $hours = [ 'T12', 'T15', 'T18', 'T21', 'T00' ];
 //     // or this → echo "<p>$day $hour: ".isFullOrDiscount( $day, $hour )."</p>";
 //   }
 // }
-
-function isFullOrDiscount( $day, $hour ) { 
-
-    
-    if ( $day == 'MON' || $day == 'WED' ) 
-       return 'discount';
-    else {
-       return 'price';
-    }
-  }
 
 
 
