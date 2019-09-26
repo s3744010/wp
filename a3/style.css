@@ -554,7 +554,7 @@ main {
     color: var(--main-font-color);
 }
 
-.synopsis .inner .booking .time div{
+.synopsis .inner .booking .time a{
     display: flex;
     width: 80%;
     margin: 3px;
@@ -566,7 +566,7 @@ main {
     align-items: center;
 }
 
-.synopsis .inner .booking .time div:hover 
+.synopsis .inner .booking .time a:hover 
 {
     background-color: var(--main-cont-color);
     color: black;
@@ -661,8 +661,7 @@ main {
 
 .booking-details input[type="text"],
 .booking-details input[type="email"],
-.booking-details input[type="tel"],
-.booking-details input[type="date"]
+.booking-details input[type="tel"]
 {
     width: 70%;
     padding: 5px 10px 5px 10px;
@@ -672,6 +671,14 @@ main {
     border: 2px solid rgb(172, 166, 166);
 
 }
+
+.booking-details select[name="cust[expiryMonth]"],
+.booking-details select[name="cust[expiryYear]"]{
+
+    width:80px;
+    display:inline-block;
+}
+
 
 .booking-details .order-button{
 
