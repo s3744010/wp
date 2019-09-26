@@ -52,18 +52,52 @@ $hours = [ 'T12', 'T15', 'T18', 'T21', 'T00' ];
 //   }
 // }
 
-function isFullOrDiscount( $day, $hour ) { 
+
+// function isFullOrDiscount( $day, $hour ) { 
 
     
-    if ( $day == 'MON' || $day == 'WED' ) 
-       return 'discount';
-    else {
-       return 'price';
+//     if ( $day == 'MON' || $day == 'WED' ) 
+//        return 'discount';
+//     else {
+//        return 'price';
+//     }
+//   }
+
+var seatPrices = {
+    full: { 
+        STA:19.80,
+        STP:17.50,
+        STPC:15.30,
+        FCA:30.00,
+        FCP:27.00,
+        FCC:24.00
+    },
+    discount: {
+        STA:14.80,
+        STP:12.50,
+        STPC:11.00,
+        FCA:24.00,
+        FCP:22.50,
+        FCC:21.00
     }
-  }
+}
 
+function isFullOrDiscount(day,hour){
+    if( day == 'MON'|| day == 'WED )
+        return discount;
+    else{
 
+        }
+    }
 
+    
+        
+    else{
+
+    }
+    
+
+}
 
   
 // function plus(whichID) {
