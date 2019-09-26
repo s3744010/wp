@@ -12,21 +12,30 @@ function movieOption(element) {
     var synopsis = document.querySelector(".synopsis");
     document.getElementsByClassName('synopsis')[0].style.display = "flex";
     synopsis.querySelector("h1").innerHTML = element.querySelector(".title p").innerHTML;
-    document.querySelector(".booking .time").innerHTML = element.querySelector(".time .inner").innerHTML;
+    // document.querySelector(".booking .time").innerHTML = element.querySelector(".time .inner").innerHTML;
     synopsis.querySelector(".plot p").innerHTML = element.querySelector(".plot_description").innerHTML;
     synopsis.querySelector(".trailer").innerHTML = element.querySelector(".trailer").innerHTML;
 
-    var time = synopsis.getElementsByClassName("time")[0].getElementsByTagName("div");
-    for (var index = 0;index < time.length; index++) {
-        time[index].addEventListener("click", openBookingForm);
+    var movieTime = element.getElementsByClassName("time")[0].getElementsByClassName("inner")[0].getElementsByTagName("div");
+    synopsis.getElementsByClassName("time")[0].innerHTML = "";
+    for (var index = 0; index < movieTime.length ; index++) {
+        var aTag = document.createElement('a');
+        aTag.setAttribute('href',"#booking-form");
+        var divTag = document.createElement('div');
+        divTag.innerHTML = movieTime[index].innerHTML;
+        aTag.appendChild(divTag);
+        aTag.addEventListener("click", function(){
+            openBookingForm(this);
+        });
+        synopsis.getElementsByClassName("time")[0].appendChild(aTag);
     }
 }
 
 function openBookingForm(element){
-
-    document.getdocument.querySelector(".synopsis .movie h1").innerHTML;
-    document.getdocument.querySelector("").innerHTML;
-    console.log(document.querySelector(".synopsis .movie h1").innerHTML);
+    var title = document.querySelector(".synopsis .movie h1").innerHTML;
+    var day = element.querySelector("div").innerHTML.substring(0, 4);
+    var time = element.querySelector("div").innerHTML.substring(6, 10);
+    document.querySelector(".booking-form .form h1").innerHTML = title + "-" + day + "-" + time;
 }
 
 // function calc(){

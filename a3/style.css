@@ -554,7 +554,7 @@ main {
     color: var(--main-font-color);
 }
 
-.synopsis .inner .booking .time div{
+.synopsis .inner .booking .time a{
     display: flex;
     width: 80%;
     margin: 3px;
@@ -566,7 +566,7 @@ main {
     align-items: center;
 }
 
-.synopsis .inner .booking .time div:hover 
+.synopsis .inner .booking .time a:hover 
 {
     background-color: var(--main-cont-color);
     color: black;
