@@ -296,7 +296,7 @@
           <div class="booking">
             <p>Make A Booking:</p>
             <div class="time">
-              <div>Wed - 9PM </div>
+              <div onclick="openBookingForm(this)">Wed - 9PM</div>
               <div>Thurs - 9PM </div>
               <div>Fri - 9PM </div>
               <div>Sat - 6PM </div>
@@ -314,15 +314,13 @@
           <div class="booking-container">
               <div class="form">
               <h1>Evengers-Day-Time</h1>
-            
-  
-                
+               
                    <div class = "inner-container">
                     
                     <div class=select-seat>
                     <fieldset><legend>Standard</legend>
                     <div>
-                      <label for="sta"><span>Adult </span>
+                      <label><span>Adult</span>
                       <select name='seats[STA]' ​id='seats-STA'>
                         <option value=''>Please Select</option>
                         <option value = "1">1</option>
@@ -340,7 +338,7 @@
                     </div>
 
                     <div>
-                      <label for="stp"><span>Concession </span>
+                      <label><span>Concession </span>
                       <select name='seats[STP]' ​id='seats-STP'>
                         <option value=''>Please Select</option>
                         <option value = "1">1</option>

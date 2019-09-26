@@ -15,33 +15,46 @@ function movieOption(element) {
     document.querySelector(".booking .time").innerHTML = element.querySelector(".time .inner").innerHTML;
     synopsis.querySelector(".plot p").innerHTML = element.querySelector(".plot_description").innerHTML;
     synopsis.querySelector(".trailer").innerHTML = element.querySelector(".trailer").innerHTML;
-}
 
-function calc(){
-
-    var quantity = document.getElementById("quantity").value;
-    if(quantity>0){
-
-        var price = document.getElementById("ticket-price").innerHTML;
-        var total = price * quantity;
+    var time = synopsis.getElementsByClassName("time")[0].getElementsByTagName("div");
+    for (var index = 0;index < time.length; index++) {
+        time[index].addEventListener("click", openBookingForm);
     }
-
-    Document.getElementById("Price").innerHTML = salePrice.toFixed(2)
-
 }
 
-$days = ['MON','TUE', ... , 'SUN', 'FUN'];
+function openBookingForm(element){
+
+    document.getdocument.querySelector(".synopsis .movie h1").innerHTML;
+    document.getdocument.querySelector("").innerHTML;
+    console.log(document.querySelector(".synopsis .movie h1").innerHTML);
+}
+
+// function calc(){
+
+//     var quantity = document.getElementById("quantity").value;
+//     if(quantity>0){
+
+//         var price = document.getElementById("ticket-price").innerHTML;
+//         var total = price * quantity;
+//     }
+
+//     document.getElementById("Price").innerHTML = salePrice.toFixed(2)
+
+// }
+
+$days = ['MON','TUE', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
 $hours = [ 'T12', 'T15', 'T18', 'T21', 'T00' ]; 
 
-foreach ( $days as $day ) {
-  foreach ( $hours as $hour ) {
-    echo '<p>'.$day.' '.$hour.': '.isFullOrDiscount( $day, $hour ).'</p>';
-    // or this → echo "<p>$day $hour: ".isFullOrDiscount( $day, $hour )."</p>";
-  }
-}
+// foreach ( $days as $day ) {
+//   foreach ( $hours as $hour ) {
+//     echo '<p>'.$day.' '.$hour.': '.isFullOrDiscount( $day, $hour ).'</p>';
+//     // or this → echo "<p>$day $hour: ".isFullOrDiscount( $day, $hour )."</p>";
+//   }
+// }
 
 function isFullOrDiscount( $day, $hour ) { 
 
+    
     if ( $day == 'MON' || $day == 'WED' ) 
        return 'discount';
     else {
@@ -53,29 +66,29 @@ function isFullOrDiscount( $day, $hour ) {
 
 
   
-function plus(whichID) {
-  console.log('plus button click');
-  var whichQty = document.getElementById(whichID+"-qty");
-  var whichSubtotal = document.getElementById(whichID+"-subtotal");
-  console.log('whichQty+' quantity is: ' + '// your code here');
-  console.log('whichSubtotal+" is: $' + '// your code here');
-}
+// function plus(whichID) {
+//   console.log('plus button click');
+//   var whichQty = document.getElementById(whichID+"-qty");
+//   var whichSubtotal = document.getElementById(whichID+"-subtotal");
+//   console.log('whichQty+' quantity is: ' + '// your code here');
+//   console.log('whichSubtotal+" is: $' + '// your code here');
+// }
 
-function minus(whichID) {
-  console.log(minus button click');
-  var whichQty = document.getElementById(whichID+"-qty");
-  var whichSubtotal = document.getElementById(whichID+"-subtotal");
-  console.log(whichQty+' quantity is: ' + '// your code here');
-  console.log(whichSubtotal+' is: $' + '// your code here');
-}
-var prices = { 
-    p1: { o1:18.5, o2:15.5, o3:30 },
-    p2: { o1:28.5, o2:25.5, o3:40 },
-    p3: { o1:38.5, o2:35.5, o3:50 }
-  };
+// function minus(whichID) {
+//   console.log(minus button click');
+//   var whichQty = document.getElementById(whichID+"-qty");
+//   var whichSubtotal = document.getElementById(whichID+"-subtotal");
+//   console.log(whichQty+' quantity is: ' + '// your code here');
+//   console.log(whichSubtotal+' is: $' + '// your code here');
+// }
+// var prices = { 
+//     p1: { o1:18.5, o2:15.5, o3:30 },
+//     p2: { o1:28.5, o2:25.5, o3:40 },
+//     p3: { o1:38.5, o2:35.5, o3:50 }
+//   };
   
-  alert(prices.p2.o3); // should display 40
-  alert(prices['p3']['o1']); // should display 38.5
+//   alert(prices.p2.o3); // should display 40
+//   alert(prices['p3']['o1']); // should display 38.5
 
-  //^(\(04\)|04|\+614)( ?\d){8}$
-  //^[a-zA-Z \-.']{1,100}$ 
+//   //^(\(04\)|04|\+614)( ?\d){8}$
+//   //^[a-zA-Z \-.']{1,100}$ 
