@@ -313,12 +313,12 @@
                
                    <div class = "inner-container">
                     
-                    <div class=select-seat>
+                    <div class="select-seat">
                     <fieldset><legend>Standard</legend>
                     <div>
                       <label><span>Adult</span>
-                      <select name='seats[STA]' ​id='seats-STA'>
-                        <option value=''>Please Select</option>
+                      <select name='seats[STA]' onchange="calculateTotal()" id="STA">
+                        <option value = "0">Please Select</option>
                         <option value = "1">1</option>
                         <option value = "2">2</option>
                         <option value = "3">3</option>
@@ -335,8 +335,8 @@
 
                     <div>
                       <label><span>Concession </span>
-                      <select name='seats[STP]' ​id='seats-STP'>
-                        <option value=''>Please Select</option>
+                      <select name='seats[STP]' onchange="calculateTotal()" id="STP">
+                        <option value = "0">Please Select</option>
                         <option value = "1">1</option>
                         <option value = "2">2</option>
                         <option value = "3">3</option>
@@ -422,8 +422,8 @@
                       </div>
                       </fieldset>
   
-                      <div class=total>
-                          <p>Total $<span>0</span><input id="totalPrice" name="Total_Price" type="hidden"></p>
+                      <div class="total">
+                          <p>Total $<span id="totalPrice">0</span></p>
                       </div>
                     </div>
 

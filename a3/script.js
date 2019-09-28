@@ -84,7 +84,6 @@ if(exMonth.selectedIndex<month && exYear.selectedIndex<=year)
     alert("Please enter a valid expiration date");
     return false;
 }
-return true;
 }
     
 
