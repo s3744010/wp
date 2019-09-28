@@ -305,7 +305,7 @@
 
     <a id="booking-form" class="section_anchors"></a>
     <section class="booking-form"> 
-        <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST" onsubmit="validate()">
+        <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST">
         <div class="inner">
           <div class="booking-container">
               <div class="form">
@@ -428,7 +428,7 @@
                     </div>
 
   
-                    <div class="booking-details" onclick="findYear()">
+                    <div class="booking-details" onsubmit="validate()">
                         <label>Name</label>
                         <input type="text" name="cust[name]" id="name">
                         <br>
@@ -442,35 +442,7 @@
                         <input type="text" name="cust[card]" id="credit-card">
                         <br>
                         <label>Expiry</label>
-                        <span><select name="cust[expiryMonth]" id="expiry-month">
-                            <option value=''>Month</option>
-                            <option value = "1">01</option>
-                            <option value = "2">02</option>
-                            <option value = "3">03</option>
-                            <option value = "4">04</option>
-                            <option value = "5">05</option>
-                            <option value = "6">06</option>
-                            <option value = "7">07</option>
-                            <option value = "8">08</option>
-                            <option value = "9">09</option>
-                            <option value = "10">10</option>
-                            <option value = "11">11</option>
-                            <option value = "12">12</option>
-                        </select>
-                        <select name="cust[expiryYear]" id="expiry-year">
-                            <option value="">Year</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            
-                           
-                            </option>
-                          </select>
+                        <span><input type=month name="cust[expiry]" id="expiry">
                       </span>
                         <br>
                       <button type="submit" class="order-button">ORDER</button>

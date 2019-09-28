@@ -39,6 +39,7 @@ function openBookingForm(element){
 }
 
 function validate(){
+
     var name= document.getElementById("name").value
     var mobile = document.getElementById("mobile").value;
     var card = document.getElementById("credit-card").value;
@@ -48,6 +49,11 @@ function validate(){
     var nameResult = nameRGEX.test(name);
     var mobileResult = mobileRGEX.test(mobile);
     var cardResult = cardRGEX.test(card);
+    
+    var exMonth = document.getElementById("expiry").value.substring(5,8);
+    var exYear = document.getElementById("expiry").value.substring(0,3);
+    var year = new Date().setFullYear;
+    var month = new Date().setMonth;
    
 
     if (nameResult ==false){
@@ -63,108 +69,11 @@ function validate(){
         alert("please valid card number");
         return false;
     }
+
+    if (exMonth<month && exYear<=year)
+    {
+        alert("Please enter a valid expiration date");
+        return false;
     {
         return true;
     }
-
-    }
-
-function findYear(){
-
-    
-    var exMonth=document.getElementById("expiry-month");
-    var exYear=document.getElementById("expiry-year");
-    var year = new Date().setFullYear;
-    var month = new Date().setFullYear;
-  
-
-
-if(exMonth.selectedIndex<month && exYear.selectedIndex<=year)
-{
-    alert("Please enter a valid expiration date");
-    return false;
-}
-}
-    
-
-
-// function calc(){
-
-//     var quantity = document.getElementById("quantity").value;
-//     if(quantity>0){
-
-//         var price = document.getElementById("ticket-price").innerHTML;
-//         var total = price * quantity;
-//     }
-
-//     document.getElementById("Price").innerHTML = salePrice.toFixed(2)
-
-// }
-
-// $days = ['MON','TUE', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
-// $hours = [ 'T12', 'T15', 'T18', 'T21', 'T00' ]; 
-
-// foreach ( $days as $day ) {
-//   foreach ( $hours as $hour ) {
-//     echo '<p>'.$day.' '.$hour.': '.isFullOrDiscount( $day, $hour ).'</p>';
-//     // or this → echo "<p>$day $hour: ".isFullOrDiscount( $day, $hour )."</p>";
-//   }
-// }
-
-
-// function isFullOrDiscount( $day, $hour ) { 
-
-    
-//     if ( $day == 'MON' || $day == 'WED' ) 
-//        return 'discount';
-//     else {
-//        return 'price';
-//     }
-//   }
-
-
-
-// function isFullOrDiscount(day,hour){
-//     if( day == 'MON'|| day == 'WED )
-//         return discount;
-//     else{
-
-//         }
-//     }
-
-    
-        
-//     else{
-
-//     }
-    
-
-
-
-  
-// function plus(whichID) {
-//   console.log('plus button click');
-//   var whichQty = document.getElementById(whichID+"-qty");
-//   var whichSubtotal = document.getElementById(whichID+"-subtotal");
-//   console.log('whichQty+' quantity is: ' + '// your code here');
-//   console.log('whichSubtotal+" is: $' + '// your code here');
-// }
-
-// function minus(whichID) {
-//   console.log(minus button click');
-//   var whichQty = document.getElementById(whichID+"-qty");
-//   var whichSubtotal = document.getElementById(whichID+"-subtotal");
-//   console.log(whichQty+' quantity is: ' + '// your code here');
-//   console.log(whichSubtotal+' is: $' + '// your code here');
-// }
-// var prices = { 
-//     p1: { o1:18.5, o2:15.5, o3:30 },
-//     p2: { o1:28.5, o2:25.5, o3:40 },
-//     p3: { o1:38.5, o2:35.5, o3:50 }
-//   };
-  
-//   alert(prices.p2.o3); // should display 40
-//   alert(prices['p3']['o1']); // should display 38.5
-
-//   //^(\(04\)|04|\+614)( ?\d){8}$
-//   //^[a-zA-Z \-.']{1,100}$ 
