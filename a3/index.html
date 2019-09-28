@@ -428,22 +428,22 @@
                     </div>
 
   
-                    <div class="booking-details" onsubmit="validate()">
+                    <div class="booking-details">
                         <label>Name</label>
-                        <input type="text" name="cust[name]" id="name">
+                        <input type="text" name="cust[name]" id="name" onchange="validateName()">
                         <br>
                         <label>Email</label>
                         <input type="email" name="cust[email]" id="email">
                         <br>
                         <label>Mobile</label>
-                        <input type="tel" name="cust[mobile]" id="mobile">
+                        <input type="tel" name="cust[mobile]" id="mobile" onchange="validateMobile()"> 
                         <br>
                         <label>Credit Card</label>
-                        <input type="text" name="cust[card]" id="credit-card">
+                        <input type="text" name="cust[card]" id="credit-card" onchange="validateCard()">
                         <br>
                         <label>Expiry</label>
-                        <span><input type=month name="cust[expiry]" id="expiry">
-                      </span>
+                        <span><input type=month name="cust[expiry]" id="expiry" onchange="validateExp()">
+                        </span> 
                         <br>
                       <button type="submit" class="order-button">ORDER</button>
                     </div>

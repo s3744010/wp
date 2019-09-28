@@ -38,42 +38,63 @@ function openBookingForm(element){
     document.querySelector(".booking-form .form h1").innerHTML = title + "-" + day + "-" + time;
 }
 
-function validate(){
-
+function validateName(){
     var name= document.getElementById("name").value
-    var mobile = document.getElementById("mobile").value;
-    var card = document.getElementById("credit-card").value;
+
     var nameRGEX = /^[a-zA-Z \-.']{1,100}$/;
-    var mobileRGEX = /^(\(04\)|04|\+614)( ?\d){8}$/;
-    var cardRGEX = /^([0-9]{4}[\s-]?){3}([0-9]{4})$/;
     var nameResult = nameRGEX.test(name);
-    var mobileResult = mobileRGEX.test(mobile);
-    var cardResult = cardRGEX.test(card);
-    
-    var exMonth = document.getElementById("expiry").value.substring(5,8);
-    var exYear = document.getElementById("expiry").value.substring(0,3);
-    var year = new Date().setFullYear;
-    var month = new Date().setMonth;
-   
 
     if (nameResult ==false){
         alert("please enter correct name");
         return false;
     }
-    
+    return true;
+}
+
+function validateMobile(){
+    var mobile = document.getElementById("mobile").value;
+
+    var mobileRGEX = /^(\(04\)|04|\+614)( ?\d){8}$/;
+
+    var mobileResult = mobileRGEX.test(mobile);
+
     if (mobileResult ==false){
         alert("please valid mobile number");
         return false;
     }
+
+    return true;
+}
+function validateCard(){
+    var card = document.getElementById("credit-card").value;
+
+    var cardRGEX = /^([0-9]{4}[\s-]?){3}([0-9]{4})$/;
+
+    var cardResult = cardRGEX.test(card);
+
     if (cardResult ==false){
         alert("please valid card number");
         return false;
     }
+    return  true;
+}
+
+function validateExp(){
+
+    var exMonth = document.getElementById("expiry").value.substring(5,8);
+    var exYear = document.getElementById("expiry").value.substring(0,4);
+    var year = new Date().getFullYear;
+    var month = new Date().getMonth;
 
     if (exMonth<month && exYear<=year)
     {
         alert("Please enter a valid expiration date");
         return false;
-    {
-        return true;
     }
+    return true;
+
+}
+
+
+
+
