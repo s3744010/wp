@@ -296,7 +296,7 @@
           <div class="booking">
             <p>Make A Booking:</p>
             <div class="time">
-              
+
             </div>
           </div>
         </div>
@@ -304,161 +304,152 @@
     </section>
 
     <a id="booking-form" class="section_anchors"></a>
-    <section class="booking-form"> 
-        <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST">
+    <section class="booking-form">
+      <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST">
         <div class="inner">
           <div class="booking-container">
-              <div class="form">
+            <div class="form">
               <h1></h1>
-               
-                   <div class = "inner-container">
-                    
-                    <div class="select-seat">
-                    <fieldset><legend>Standard</legend>
+              <div class="inner-container">
+                <div class="select-seat">
+                  <fieldset>
+                    <legend>Standard</legend>
                     <div>
                       <label><span>Adult</span>
-                      <select name='seats[STA]' onchange="calculateTotal()" id="STA">
-                        <option value = "0">Please Select</option>
-                        <option value = "1">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                        <option value = "6">6</option>
-                        <option value = "7">7</option>
-                        <option value = "8">8</option>
-                        <option value = "9">9</option>
-                        <option value = "10">10</option>
-                      </select>
-                    </label>
+                        <select name='seats[STA]' id="STA" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
                     </div>
-
                     <div>
                       <label><span>Concession </span>
-                      <select name='seats[STP]' onchange="calculateTotal()" id="STP">
-                        <option value = "0">Please Select</option>
-                        <option value = "1">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                        <option value = "6">6</option>
-                        <option value = "7">7</option>
-                        <option value = "8">8</option>
-                        <option value = "9">9</option>
-                        <option value = "10">10</option>
-                      </select>
-                    </label>
+                        <select name='seats[STP]' id="STP" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
                     </div>
-
                     <div>
-                    <label><span>Children </span>
-                       <select name='seats[STC]' ​id='seats-STC'>
-                        <option value=''>Please Select</option>
-                        <option value = "1">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                        <option value = "6">6</option>
-                        <option value = "7">7</option>
-                        <option value = "8">8</option>
-                        <option value = "9">9</option>
-                        <option value = "10">10</option>
-                      </select>
-                    </label>
-                    </div>
-                    </fieldset>
-  
-                    <fieldset><legend>First Class</legend>
-                      <div><label><span>Adult </span>
-                        <select name='seats[FCA]' ​id='seats-FCA'>
-                          <option value=''>Please Select</option>
-                          <option value = "1">1</option>
-                          <option value = "2">2</option>
-                          <option value = "3">3</option>
-                          <option value = "4">4</option>
-                          <option value = "5">5</option>
-                          <option value = "6">6</option>
-                          <option value = "7">7</option>
-                          <option value = "8">8</option>
-                          <option value = "9">9</option>
-                          <option value = "10">10</option>
-                        </select>
-                      </label>
-                      </div>
-                      <div><label><span>Concession </span>
-                        <select name='seats[FCP]' ​id='seats-STP'>
-                          <option value=''>Please Select</option>
-                          <option value = "1">1</option>
-                          <option value = "2">2</option>
-                          <option value = "3">3</option>
-                          <option value = "4">4</option>
-                          <option value = "5">5</option>
-                          <option value = "6">6</option>
-                          <option value = "7">7</option>
-                          <option value = "8">8</option>
-                          <option value = "9">9</option>
-                          <option value = "10">10</option>
-                        </select>
-                      </label>
-                      </div>
-                      <div>
                       <label><span>Children </span>
-                         <select name='seats[FCC]' ​id='seats-STC'>
-                          <option value=''>Please Select</option>
-                          <option value = "1">1</option>
-                          <option value = "2">2</option>
-                          <option value = "3">3</option>
-                          <option value = "4">4</option>
-                          <option value = "5">5</option>
-                          <option value = "6">6</option>
-                          <option value = "7">7</option>
-                          <option value = "8">8</option>
-                          <option value = "9">9</option>
-                          <option value = "10">10</option>
+                        <select name='seats[STC]' id="STC" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
                         </select>
                       </label>
-                      </div>
-                      </fieldset>
-  
-                      <div class="total">
-                          <p>Total $<span id="totalPrice">0</span></p>
-                      </div>
                     </div>
+                  </fieldset>
 
-  
-                    <div class="booking-details">
-                        <label>Name</label>
-                        <input type="text" name="cust[name]" id="name" onchange="validateName()">
-                        <br>
-                        <label>Email</label>
-                        <input type="email" name="cust[email]" id="email">
-                        <br>
-                        <label>Mobile</label>
-                        <input type="tel" name="cust[mobile]" id="mobile" onchange="validateMobile()"> 
-                        <br>
-                        <label>Credit Card</label>
-                        <input type="text" name="cust[card]" id="credit-card" onchange="validateCard()">
-                        <br>
-                        <label>Expiry</label>
-                        <span><input type=month name="cust[expiry]" id="expiry" onchange="validateExp()">
-                        </span> 
-                        <br>
-                      <button type="submit" class="order-button">ORDER</button>
+                  <fieldset>
+                    <legend>First Class</legend>
+                    <div><label><span>Adult </span>
+                        <select name='seats[FCA]' id="FCA" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
                     </div>
+                    <div><label><span>Concession </span>
+                        <select name='seats[FCP]' id="FCP" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div>
+                      <label><span>Children </span>
+                        <select name='seats[FCC]' id="FCC" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <div class="total">
+                    <p>Total $<span id="totalPrice">0</span></p>
+                  </div>
                 </div>
-           
-          
-  
+
+                <div class="booking-details">
+                  <label>Name</label>
+                  <input type="text" name="cust[name]" id="name" onchange="validateName()">
+                  <br>
+                  <label>Email</label>
+                  <input type="email" name="cust[email]" id="email">
+                  <br>
+                  <label>Mobile</label>
+                  <input type="tel" name="cust[mobile]" id="mobile" onchange="validateMobile()">
+                  <br>
+                  <label>Credit Card</label>
+                  <input type="text" name="cust[card]" id="credit-card" onchange="validateCard()">
+                  <br>
+                  <label>Expiry</label>
+                  <span><input type=month name="cust[expiry]" id="expiry" onchange="validateExp()">
+                  </span>
+                  <br>
+                  <button type="submit" class="order-button">ORDER</button>
+                </div>
+              </div>
+            </div>
           </div>
-  
-  
-        
-        </div>
         </div>
       </form>
-      </section>
+    </section>
   </main>
 
   <footer>
