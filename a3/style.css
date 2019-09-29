@@ -153,6 +153,7 @@ nav a.active {
 
     padding: 20px 20px 20px 20px;
     border-radius: 20px;
+    transition: all ease-in-out 500ms;
 }
 
 .intro .inner button:hover {
@@ -372,7 +373,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5em 0em 5em 0em;
+    padding: 5em 0em 5em 0em;
+
+    background: linear-gradient(black 95%, var(--secondary-bg-color) 100%);
 }
 
 .now_showing .inner {
@@ -554,7 +557,7 @@ main {
     color: var(--main-font-color);
 }
 
-.synopsis .inner .booking .time div{
+.synopsis .inner .booking .time a{
     display: flex;
     width: 80%;
     margin: 3px;
@@ -566,12 +569,135 @@ main {
     align-items: center;
 }
 
-.synopsis .inner .booking .time div:hover 
+.synopsis .inner .booking .time a:hover 
 {
     background-color: var(--main-cont-color);
     color: black;
     cursor: pointer;
 } 
+
+.booking-form{
+    display: none;
+    background: linear-gradient(var(--secondary-bg-color), black 10%, black 90%, var(--secondary-bg-color));
+    height: auto;
+    width: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.booking-form .inner{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;  
+}
+
+.booking-form .booking-container{
+    height: auto;
+    width: 80%;
+}
+
+.booking-form .form {
+
+    display: block;
+    height : auto;
+    width: auto;
+    border: 1px solid rgba(255, 255, 255);
+    padding : 10px;
+    
+}
+
+.booking-form .form {
+    font-size: 20px;
+    color: var(--main-font-color);
+    font-family: "Montserrat", sans-serif;
+}
+
+.booking-form .inner-container{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 100px;
+    grid-column-gap: 50px;
+    margin: 10px;
+
+}
+
+.booking-form .inner-container .select-seat{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.booking-form .inner-container .booking-details{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.booking-form .form textarea{
+    width:500px;
+	height:200px;
+}
+
+
+.form select
+{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 70%;
+   
+    border: 2px solid #ccc;
+    font-size: 15px;
+    background-color: white;
+    padding: 5px 10px 5px 20px;
+}
+
+.booking-details input[type="text"],
+.booking-details input[type="email"],
+.booking-details input[type="tel"]
+{
+    width: 70%;
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    border: 2px solid rgb(172, 166, 166);
+
+}
+
+.booking-details select[name="cust[expiryMonth]"],
+.booking-details select[name="cust[expiryYear]"]{
+
+    width:80px;
+    display:inline-block;
+}
+
+
+.booking-details .order-button{
+    margin-top: 30px;
+    background-color: #00000010;
+    border: 4px solid var(--main-cont-color);
+    color: white;
+    font-size: 15px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    outline: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+
+    transition: all ease-in-out 500ms;
+}
+
+.order-button:hover{
+    border-color: aliceblue;
+    cursor: pointer;
+    color: rgb(38, 226, 214);
+}
 
 footer {
     background-color: black;

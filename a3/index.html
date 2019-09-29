@@ -33,7 +33,7 @@
       <div class="content">
         <h1>Welcome</h1>
         <h2>Future Cinematic</h2>
-        <button onclick="scrollFunction">Now Showing</button>
+        <a href="#now_showing"><button>Now Showing</button></a>
       </div>
     </div>
   </div>
@@ -158,7 +158,7 @@
               <div class="time">
                 <div class="inner">
                   <div>Wed - 9PM </div>
-                  <div>Thurs - 9PM </div>
+                  <div>Thu - 9PM </div>
                   <div>Fri - 9PM </div>
                   <div>Sat - 6PM </div>
                   <div>Sun - 6PM </div>
@@ -192,7 +192,7 @@
               <div class="time">
                 <div class="inner">
                   <div>Mon - 6PM </div>
-                  <div>Tues - 6PM </div>
+                  <div>Tue - 6PM </div>
                   <div>Sat - 3PM </div>
                   <div>Sun - 3PM </div>
                 </div>
@@ -224,9 +224,9 @@
               <div class="time">
                 <div class="inner">
                   <div>Mon - 12PM </div>
-                  <div>Tues - 12PM </div>
+                  <div>Tue - 12PM </div>
                   <div>Wed - 6PM </div>
-                  <div>Thurs - 6PM </div>
+                  <div>Thu - 6PM </div>
                   <div>Fri - 6PM </div>
                   <div>Sat - 12PM </div>
                   <div>Sun - 12PM </div>
@@ -258,7 +258,7 @@
               <div class="time">
                 <div class="inner">
                   <div>Wed - 12PM </div>
-                  <div>Thurs - 12PM </div>
+                  <div>Thu - 12PM </div>
                   <div>Fri - 12PM </div>
                   <div>Sat - 9PM </div>
                   <div>Sun - 9PM </div>
@@ -296,15 +296,159 @@
           <div class="booking">
             <p>Make A Booking:</p>
             <div class="time">
-              <div>Wed - 9PM </div>
-              <div>Thurs - 9PM </div>
-              <div>Fri - 9PM </div>
-              <div>Sat - 6PM </div>
-              <div>Sun - 6PM </div>
+
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <a id="booking-form" class="section_anchors"></a>
+    <section class="booking-form">
+      <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST">
+        <div class="inner">
+          <div class="booking-container">
+            <div class="form">
+              <h1></h1>
+              <div class="inner-container">
+                <div class="select-seat">
+                  <fieldset>
+                    <legend>Standard</legend>
+                    <div>
+                      <label><span>Adult</span>
+                        <select name='seats[STA]' id="seats-STA" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div>
+                      <label><span>Concession </span>
+                        <select name='seats[STP]' id="seats-STP" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div>
+                      <label><span>Children </span>
+                        <select name='seats[STC]' id="seats-STC" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>First Class</legend>
+                    <div><label><span>Adult </span>
+                        <select name='seats[FCA]' id="seats-FCA" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div><label><span>Concession </span>
+                        <select name='seats[FCP]' id="seats-FCP" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div>
+                      <label><span>Children </span>
+                        <select name='seats[FCC]' id="seats-FCC" onchange="calculateTotal()">
+                          <option value="0">Please Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <div class="total">
+                    <p>Total $<span id="totalPrice">0</span></p>
+                  </div>
+                </div>
+
+                <div class="booking-details">
+                  <label>Name</label>
+                  <input type="text" name="cust[name]" id="name" onchange="validateName()">
+                  <br>
+                  <label>Email</label>
+                  <input type="email" name="cust[email]" id="email">
+                  <br>
+                  <label>Mobile</label>
+                  <input type="tel" name="cust[mobile]" id="mobile" onchange="validateMobile()">
+                  <br>
+                  <label>Credit Card</label>
+                  <input type="text" name="cust[card]" id="credit-card" onchange="validateCard()">
+                  <br>
+                  <label>Expiry</label>
+                  <span><input type=month name="cust[expiry]" id="expiry" onchange="validateExp()">
+                  </span>
+                  <br>
+                  <button type="submit" class="order-button">ORDER</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </section>
   </main>
 
@@ -320,7 +464,6 @@
         <a href="#about_us">About Us</a>
         <a href="#price">Prices</a>
         <a href="#now_showing">Now Showing</a>
-        <a href="#">Book A Ticket</a>
       </div>
       <div id="contact_details" class="verticle_block">
         <h3>Visit</h3>
