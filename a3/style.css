@@ -153,6 +153,7 @@ nav a.active {
 
     padding: 20px 20px 20px 20px;
     border-radius: 20px;
+    transition: all ease-in-out 500ms;
 }
 
 .intro .inner button:hover {
@@ -372,7 +373,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5em 0em 5em 0em;
+    padding: 5em 0em 5em 0em;
+
+    background: linear-gradient(black 95%, var(--secondary-bg-color) 100%);
 }
 
 .now_showing .inner {
@@ -676,7 +679,6 @@ main {
 
 
 .booking-details .order-button{
-
     margin-top: 30px;
     background-color: #00000010;
     border: 4px solid var(--main-cont-color);
@@ -687,16 +689,15 @@ main {
     outline: none;
     padding: 10px 10px 10px 10px;
     border-radius: 20px;
+
+    transition: all ease-in-out 500ms;
 }
 
-.submit-button:hover{
+.order-button:hover{
     border-color: aliceblue;
     cursor: pointer;
     color: rgb(38, 226, 214);
-
 }
-    
-
 
 footer {
     background-color: black;

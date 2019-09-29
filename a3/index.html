@@ -33,7 +33,7 @@
       <div class="content">
         <h1>Welcome</h1>
         <h2>Future Cinematic</h2>
-        <button onclick="scrollFunction">Now Showing</button>
+        <a href="#now_showing"><button>Now Showing</button></a>
       </div>
     </div>
   </div>
@@ -316,7 +316,7 @@
                     <legend>Standard</legend>
                     <div>
                       <label><span>Adult</span>
-                        <select name='seats[STA]' id="STA" onchange="calculateTotal()">
+                        <select name='seats[STA]' id="seats-STA" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -333,7 +333,7 @@
                     </div>
                     <div>
                       <label><span>Concession </span>
-                        <select name='seats[STP]' id="STP" onchange="calculateTotal()">
+                        <select name='seats[STP]' id="seats-STP" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -350,7 +350,7 @@
                     </div>
                     <div>
                       <label><span>Children </span>
-                        <select name='seats[STC]' id="STC" onchange="calculateTotal()">
+                        <select name='seats[STC]' id="seats-STC" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -370,7 +370,7 @@
                   <fieldset>
                     <legend>First Class</legend>
                     <div><label><span>Adult </span>
-                        <select name='seats[FCA]' id="FCA" onchange="calculateTotal()">
+                        <select name='seats[FCA]' id="seats-FCA" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -386,7 +386,7 @@
                       </label>
                     </div>
                     <div><label><span>Concession </span>
-                        <select name='seats[FCP]' id="FCP" onchange="calculateTotal()">
+                        <select name='seats[FCP]' id="seats-FCP" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -403,7 +403,7 @@
                     </div>
                     <div>
                       <label><span>Children </span>
-                        <select name='seats[FCC]' id="FCC" onchange="calculateTotal()">
+                        <select name='seats[FCC]' id="seats-FCC" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -464,7 +464,6 @@
         <a href="#about_us">About Us</a>
         <a href="#price">Prices</a>
         <a href="#now_showing">Now Showing</a>
-        <a href="#">Book A Ticket</a>
       </div>
       <div id="contact_details" class="verticle_block">
         <h3>Visit</h3>

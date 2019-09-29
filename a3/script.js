@@ -35,13 +35,50 @@ function openBookingForm(element){
     var day = element.querySelector("div").innerHTML.substring(0, 3);
     var hour = element.querySelector("div").innerHTML.substring(6, 10);
 
+    var inputTagMovie = document.createElement('input');
+    inputTagMovie.setAttribute("type", "hidden");
+    inputTagMovie.setAttribute("name", "movie[id]");
+    inputTagMovie.setAttribute("id", "movie-id");
+    var movieID = {
+        ACT: "Avengers: End Game",
+        RMC: "Top End Wedding",
+        ANM: "Dumbo",
+        AHF: "The Happy Prince"
+    }
+    for (movieCode in movieID) {
+        if (movieID[movieCode] == title) {
+            inputTagMovie.value = movieCode;
+        }
+    }
+
+    var inputTagDay = document.createElement('input');
+    inputTagDay.setAttribute("type", "hidden");
+    inputTagDay.setAttribute("name", "movie[day]");
+    inputTagDay.setAttribute("id", "movie-day");
+    inputTagDay.value = day.toUpperCase();
+
+    var inputTagHour = document.createElement('input');
+    inputTagHour.setAttribute("type", "hidden");
+    inputTagHour.setAttribute("name", "movie[hour]");
+    inputTagHour.setAttribute("id", "movie-hour");
+    if (hour.match(/[a-zA-Z]+/g) == "PM" && Number(hour.match(/\d+/)) != 12) {
+        inputTagHour.value = "T" + (Number(hour.match(/\d+/)) + 12);
+    } else {
+        inputTagHour.value = "T" + hour.match(/\d+/);
+    }
+
     var spanTagDay = document.createElement('span');
     spanTagDay.setAttribute("id", "day");
     spanTagDay.innerHTML = day;
+    spanTagDay.appendChild(inputTagDay);
+    
     var spanTagHour = document.createElement('span');
     spanTagHour.setAttribute("id", "hour");
     spanTagHour.innerHTML = hour;
-    document.querySelector(".booking-form .form h1").innerHTML = title + " - ";
+    spanTagHour.appendChild(inputTagHour);
+
+    document.querySelector(".booking-form .form h1").innerHTML = title +  " - ";
+    document.querySelector(".booking-form .form h1").appendChild(inputTagMovie);
     document.querySelector(".booking-form .form h1").appendChild(spanTagDay);
     document.querySelector(".booking-form .form h1").innerHTML += " - ";
     document.querySelector(".booking-form .form h1").appendChild(spanTagHour);
@@ -80,12 +117,12 @@ function calculateTotal() {
 
     function calcResult() {
         var qtySeats = {
-            FCA: document.getElementById('FCA').value,
-            FCP: document.getElementById('FCP').value,
-            FCC: document.getElementById('FCC').value,
-            STA: document.getElementById('STA').value,
-            STP: document.getElementById('STP').value,
-            STC: document.getElementById('STC').value,
+            FCA: document.getElementById('seats-FCA').value,
+            FCP: document.getElementById('seats-FCP').value,
+            FCC: document.getElementById('seats-FCC').value,
+            STA: document.getElementById('seats-STA').value,
+            STP: document.getElementById('seats-STP').value,
+            STC: document.getElementById('seats-STC').value,
         };
         var fod = isFullOrDiscount(document.getElementById("day").innerHTML, document.getElementById("hour").innerHTML);
         var total = 0;
