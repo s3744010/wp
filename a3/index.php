@@ -8,10 +8,9 @@
 
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-  <link rel='stylesheet' type="text/css" href="style.css">
   <script src="script.js"></script>
-  <!-- <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
-  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script> -->
+  <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
+  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script>
   <script src='../wireframe.js'></script>
 </head>
 
