@@ -70,20 +70,22 @@ function openBookingForm(element){
     var spanTagDay = document.createElement('span');
     spanTagDay.setAttribute("id", "day");
     spanTagDay.innerHTML = day;
-    spanTagDay.appendChild(inputTagDay);
     
     var spanTagHour = document.createElement('span');
     spanTagHour.setAttribute("id", "hour");
     spanTagHour.innerHTML = hour;
-    spanTagHour.appendChild(inputTagHour);
 
     document.querySelector(".booking-form .form h1").innerHTML = title +  " - ";
-    document.querySelector(".booking-form .form h1").appendChild(inputTagMovie);
     document.querySelector(".booking-form .form h1").appendChild(spanTagDay);
     document.querySelector(".booking-form .form h1").innerHTML += " - ";
     document.querySelector(".booking-form .form h1").appendChild(spanTagHour);
+    document.querySelector(".booking-form .form h1").appendChild(inputTagMovie);
+    document.querySelector(".booking-form .form h1").appendChild(inputTagDay);
+    document.querySelector(".booking-form .form h1").appendChild(inputTagHour);
 
     document.querySelector(".booking-form").style.display = "block";
+
+    calculateTotal();
 }
 
 function calculateTotal() {
@@ -108,10 +110,11 @@ function calculateTotal() {
 
     function isFullOrDiscount(day, hour) {
         var ret = "full";
-        if (hour == "12pm") {
-            if (day != 'Sat' && day != 'Sun')
-                ret = "discount";
-        }
+        if (day != "Sat" && day != "Sun")
+            ret = "discount";
+
+        if (hour != "12PM" && day != "Mon" && day != "Wed")
+            ret = "full";
         return ret;
     }
 
@@ -125,11 +128,11 @@ function calculateTotal() {
             STC: document.getElementById('seats-STC').value,
         };
         var fod = isFullOrDiscount(document.getElementById("day").innerHTML, document.getElementById("hour").innerHTML);
+        
         var total = 0;
         for (seatCode in qtySeats) {
             total += qtySeats[seatCode] * seatPrices[fod][seatCode];
         }
-        console.log(total);
         document.getElementById("totalPrice").innerHTML = total.toFixed(2);
     }
     calcResult();
