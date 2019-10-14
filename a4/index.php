@@ -1,3 +1,7 @@
+<?php
+  include 'tools.php';
+  indexPage();
+?>
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -9,9 +13,8 @@
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
   <script src="script.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <!-- <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
-  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script> -->
+  <link rel="stylesheet" type="text/css" href="style.css?t=<?php echo filemtime("style.css"); ?>" />
+  <script src="tools.js?t=<?php echo filemtime("tools.js"); ?>"></script>
   <script src='../wireframe.js'></script>
 </head>
 
@@ -173,8 +176,7 @@
             </div>
             <div class="trailer">
               <div class="videoWrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0"
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </a>
@@ -204,9 +206,7 @@
             </div>
             <div class="trailer">
               <div class="videoWrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </a>
@@ -239,8 +239,7 @@
             </div>
             <div class="trailer">
               <div class="videoWrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7NiYVoqBt-8" frameborder="0"
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7NiYVoqBt-8" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </a>
@@ -271,8 +270,7 @@
             </div>
             <div class="trailer">
               <div class="videoWrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tXANCJQkUIE" frameborder="0"
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tXANCJQkUIE" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </a>
@@ -305,7 +303,7 @@
 
     <a id="booking-form" class="section_anchors"></a>
     <section class="booking-form">
-      <form action="https://titan.csit.rmit.edu.au/~e54061/wp/lunardo-formtest.php" method="POST">
+      <form method="POST" action="">
         <div class="inner">
           <div class="booking-container">
             <div class="form">
@@ -316,7 +314,7 @@
                     <legend>Standard</legend>
                     <div>
                       <label><span>Adult</span>
-                        <select name='seats[STA]' id="seats-STA" onchange="calculateTotal()">
+                        <select name='seats[STA]' id="seats-STA" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -333,7 +331,7 @@
                     </div>
                     <div>
                       <label><span>Concession </span>
-                        <select name='seats[STP]' id="seats-STP" onchange="calculateTotal()">
+                        <select name='seats[STP]' id="seats-STP" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -350,7 +348,7 @@
                     </div>
                     <div>
                       <label><span>Children </span>
-                        <select name='seats[STC]' id="seats-STC" onchange="calculateTotal()">
+                        <select name='seats[STC]' id="seats-STC" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -370,7 +368,7 @@
                   <fieldset>
                     <legend>First Class</legend>
                     <div><label><span>Adult </span>
-                        <select name='seats[FCA]' id="seats-FCA" onchange="calculateTotal()">
+                        <select name='seats[FCA]' id="seats-FCA" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -386,7 +384,7 @@
                       </label>
                     </div>
                     <div><label><span>Concession </span>
-                        <select name='seats[FCP]' id="seats-FCP" onchange="calculateTotal()">
+                        <select name='seats[FCP]' id="seats-FCP" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -403,7 +401,7 @@
                     </div>
                     <div>
                       <label><span>Children </span>
-                        <select name='seats[FCC]' id="seats-FCC" onchange="calculateTotal()">
+                        <select name='seats[FCC]' id="seats-FCC" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
                           <option value="0">Please Select</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -421,27 +419,37 @@
                   </fieldset>
 
                   <div class="total">
-                    <p>Total $<span id="totalPrice">0</span></p>
+                    <p>Total $<span id="totalPrice_display">0</span></p>
+                    <input type="number" name="seats[totalPrice]" id="totalPrice" value="" hidden>
                   </div>
                 </div>
 
                 <div class="booking-details">
-                  <label>Name</label>
-                  <input type="text" name="cust[name]" id="name" onchange="validateName()">
-                  <br>
-                  <label>Email</label>
-                  <input type="email" name="cust[email]" id="email">
-                  <br>
-                  <label>Mobile</label>
-                  <input type="tel" name="cust[mobile]" id="mobile" onchange="validateMobile()">
-                  <br>
-                  <label>Credit Card</label>
-                  <input type="text" name="cust[card]" id="credit-card" onchange="validateCard()">
-                  <br>
-                  <label>Expiry</label>
-                  <span><input type=month name="cust[expiry]" id="expiry" onchange="validateExp()">
-                  </span>
-                  <br>
+                  <div>
+                    <label>Name</label><br>
+                    <input type="text" name="cust[name]" id="name" placeholder="Insert your name..." pattern="[a-zA-Z ]+" title="Insert only letters" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
+                  </div>
+
+                  <div>
+                    <label>Email</label><br>
+                    <input type="email" name="cust[email]" id="email" placeholder="example@domain.com" title="example@domain.com" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
+                  </div>
+
+                  <div>
+                    <label>Mobile</label><br>
+                    <input type="tel" name="cust[mobile]" id="mobile" placeholder="mobile phone number" title="mobile phone number" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
+                  </div>
+
+                  <div>
+                    <label>Credit Card</label><br>
+                    <input type="text" name="cust[card]" id="credit-card" placeholder="####-####-####-####" title="8 digit credit card number" pattern="[0-9]+-[0-9]+-[0-9+]+-[0-9]+" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
+                  </div>
+
+                  <div>
+                    <label>Expiry</label><br>
+                    <span><input type=month name="cust[expiry]" id="expiry" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
+                    </span>
+                  </div>
                   <button type="submit" class="order-button">ORDER</button>
                 </div>
               </div>
@@ -489,7 +497,7 @@
         <script>
           document.write(new Date().getFullYear());
         </script> Teoh Jie Sheng (s3744010), Choong Wan Si (s3733738) | A2-s3744010-s3733738. Last modified
-        <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+        <?= date("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
       <div class="foot">Disclaimer: This website is not a real website and is being developed as part of a School of
         Science Web
         Programming course at RMIT University in Melbourne, Australia.</div>
@@ -497,7 +505,7 @@
   </footer>
 
   <script>
-    window.onscroll = function () {
+    window.onscroll = function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       var windowHeight = window.screen.height;
       var navbar = document.getElementById('navbar').getElementsByTagName('a');
@@ -511,6 +519,7 @@
         turnActive(navbar[3]);
       }
     };
+    setExpiryDateMinMax();
   </script>
 
 </body>
