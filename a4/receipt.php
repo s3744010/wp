@@ -1,13 +1,6 @@
 <?php
 include 'tools.php';
 receiptPage();
-$subtotal = calSubTotal();
-
-echo $_SESSION[''];
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,7 +146,7 @@ echo $_SESSION[''];
 
 <body>
     <a href="./index.php">Back to front page</a>
-    <div class="invoice">
+    <section class="invoice">
         <div class="inner">
             <h1>Tax Invoice</h1>
             <h2>LUNARDO</h2>
@@ -161,9 +154,9 @@ echo $_SESSION[''];
 
             <div class="top">
                 <a>ABN: 00 123 456 789</a>
-                <div class="movie-name"><?php echo  $_SESSION['movie']['id'] ?></div>
-                <div class="day">DAY: <?php echo  $_SESSION['movie']['day'] ?></div>
-                <div class="hour">TIME: <?php echo  $_SESSION['movie']['hour'] ?></div>
+                <div class="movie-name"><?php echo getMovieName($_SESSION['movie']['id']); ?></div>
+                <div class="day">DAY: <?php echo $_SESSION['movie']['day'] ?></div>
+                <div class="hour">TIME: <?php echo getTime($_SESSION['movie']['hour']); ?></div>
             </div>
 
             <div class="custInfo">
@@ -180,25 +173,17 @@ echo $_SESSION[''];
                         <th>PRICE</th>
                         <th>SUBTOTAL</th>
                     </tr>
-                    <tr>
-                        <td><?php echo $subtotal[0] ?></td>
-                        <td><?php echo preShow($_SESSION['seats']); ?></td>
-                    </tr>
-                    <tr>
-                        <td><?php echo  $_SESSION['seats']['STC'] ?></td>
-                    </tr>
+                    <?php generateTaxInvoiceRows(); ?>
                 </table>
             </div>
         </div>
+    </section>
 
-
-    </div>
-
-    <div class="ticket">
+    <section class="ticket">
         <h1>Ticket</h1>
         <div class="container">
 
-            <div class="ticket-style">
+            <!-- <div class="ticket-style">
                 <img src="../../media/ticketbg.png" alt="ticket">
                 <h2>LUNARDO</h2>
                 <br>
@@ -222,15 +207,10 @@ echo $_SESSION[''];
                         </tr>
                     </table>
                 </div>
-            </div>
-            <?= printTicket(); ?>
+            </div> -->
+            <?= generateTickets(); ?>
         </div>
-        
-
-    </div>
-
-
-
+    </section>
 </body>
 
 </html>
