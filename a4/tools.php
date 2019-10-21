@@ -2,62 +2,6 @@
 
 session_start();
 
-function movies()
-{
-
-  $moviesObject = [
-    'ACT' => [
-      'title' => 'Avengers: Endgame',
-      'rating' => 'R',
-      'screenings' => [
-        'MON' => 'T18',
-        'TUE' => 'T18',
-        'SAT' => 'T15',
-        'SUN' => 'T15'
-      ]
-    ],
-
-    'RMC' => [
-      'title' => 'Top-End-Wedding',
-      'rating' => 'R',
-      'screenings' => [
-        'WED' => 'T21',
-        'THU' => 'T21',
-        'FRI' => 'T21',
-        'SAT' => 'T18',
-        'SUN' => 'T18'
-      ]
-    ],
-
-    'ANM' => [
-      'title' => 'Dumbo',
-      'rating' => 'R',
-      'screenings' => [
-        'MON' => 'T12',
-        'TUE' => 'T12',
-        'WED' => 'T18',
-        'THU' => 'T18',
-        'FRI' => 'T21',
-        'SAT' => 'T12',
-        'SUN' => 'T12'
-      ]
-    ],
-
-    'AHF' => [
-      'title' => 'The Happy Prince',
-      'rating' => 'R',
-      'screenings' => [
-        'WED' => 'T12',
-        'THU' => 'T12',
-        'FRI' => 'T12',
-        'SAT' => 'T21',
-        'SUN' => 'T21'
-      ]
-    ]
-  ];
-}
-
-
 function indexPage()
 {
   if (!empty($_POST)) {
@@ -133,12 +77,11 @@ function receiptPage()
     header("Location: ./index.php");
     exit();
   } else {
-    preShow($_SESSION);
     $_POST = array();
   }
 }
 
-function printTicket()
+function generateTickets()
 {
   $seats = $_SESSION['seats'];
   foreach ($seats as $seatType => $value) {
@@ -148,9 +91,9 @@ function printTicket()
                 <img src="../../media/ticketbg.png" alt="ticket">
                 <h2>LUNARDO</h2>
                 <br>
-                <div class="movie-name">DUMBO</div>
+                <div class="movie-name">'. getMovieName($_SESSION['movie']['id']) .'</div>
                 <br>
-                <div class="ticket-type">'.  $seatType . '</div>
+                <div class="ticket-type">'. getSeatType($seatType) .'</div>
 
                 <div class="details">
                     <table>
@@ -161,74 +104,117 @@ function printTicket()
                             <th>RATING</th>
                         </tr>
                         <tr>
-                            <td>$10</td>
-                            <td>' .  $_SESSION['movie']['day'] . '</td>
-                            <td>' . $_SESSION['movie']['hour'] . '</td>
+                            <td>$'. getSeatPrice('STA') .'</td>
+                            <td>'. $_SESSION['movie']['day'] .'</td>
+                            <td>'. getTime($_SESSION['movie']['hour']) .'</td>
                             <td>R</td>
                         </tr>
                     </table>
                 </div>
             </div>';
-      // echo $seatType . $value . "\n\n";
     }
   }
 }
 
-
-function calSubTotal()
+function generateTaxInvoiceRows()
 {
+  $seats = $_SESSION['seats'];
 
-
-  function isFullOrDiscount($day, $hour)
-  {
-
-    $ret = "full";
-    if ($day != "Sat" && $day != "Sun")
-      $ret = "discount";
-
-    if ($hour != "12PM" && $day != "Mon" && $day != "Wed")
-      $ret = "full";
-    return $ret;
-  }
-
-  function calcResult()
-  {
-    $ret = isFullOrDiscount($_POST['movie']['day'], $_POST['movie']['hour']);
-    $subtotals = array();
-    $seatsQty = $_SESSION['seats'];
-
-    $prices = [
-      'full' => [
-        'STA' => 19.8,
-        'STP' => 17.5,
-        'STC' => 15.30,
-        'FCA' => 30.00,
-        'FCP' => 27.00,
-        'FCC' => 24.00
-
-      ],
-      'discount' => [
-        'FCA' => 24.00,
-        'FCP' => 22.50,
-        'FCC' => 21.00,
-        'STA' => 14.00,
-        'STP' => 12.50,
-        'STC' => 11.00
-      ]
-    ];
-
-    // for ($value = 0; $value < 6; $value++) {
-    //   array_push($subtotals, $seatsQty[$value] * $prices[$ret][$value]);
-    // }
-    foreach ($prices[strval($ret)] as $index => $price) {
-      array_push($subtotals, $seatsQty[$index] * $price);
+  foreach ($seats as $seatType => $value) {
+    if ($value > 0 && $seatType != "totalPrice") {
+      echo '<tr>
+              <td>'. $value .'</td>
+              <td>'. getSeatType($seatType) .'</td>
+              <td>'. getSeatPrice($seatType) .'</td>
+              <td>'. $value * getSeatPrice($seatType) .'</td>
+            </tr>';
     }
-    // return $subtotals;
-    return $subtotals;
   }
-  return calcResult();
 }
 
+function isFullOrDiscount($day, $hour)
+{
+  $ret = "full";
+  if ($day != "Sat" && $day != "Sun")
+    $ret = "discount";
+  if ($hour != "T12" && $day != "Mon" && $day != "Wed")
+    $ret = "full";
+  return $ret;
+}
+
+function getSeatPrice($seat)
+{
+  $ret = isFullOrDiscount($_SESSION['movie']['day'], $_SESSION['movie']['hour']);
+
+  $prices = [
+    'full' => [
+      'STA' => 19.8,
+      'STP' => 17.5,
+      'STC' => 15.30,
+      'FCA' => 30.00,
+      'FCP' => 27.00,
+      'FCC' => 24.00
+
+    ],
+    'discount' => [
+      'FCA' => 24.00,
+      'FCP' => 22.50,
+      'FCC' => 21.00,
+      'STA' => 14.00,
+      'STP' => 12.50,
+      'STC' => 11.00
+    ]
+  ];
+
+  foreach ($prices[strval($ret)] as $index => $price) {
+    if ($index == $seat) {
+      return $price;
+    }
+  }
+}
+
+function getSeatType($seat)
+{
+  $seatType = [
+    'STA' => "STANDARD ADULT",
+    'STP' => "STANDARD CONCESSION",
+    'STC' => "STANDARD CHILD",
+    'FCA' => "FIRST CLASS ADULT",
+    'FCP' => "FIRST CLASS CONSESSION",
+    'FCC' => "FIRST CLASS CHILD"
+  ];
+
+  foreach ($seatType as $shortform => $fullname) {
+    if ($shortform == $seat) {
+      return $fullname;
+    }
+  }
+}
+
+function getMovieName($movieID)
+{
+  $movieList = [
+    'ACT' => "Avengers: Endgame",
+    'RMC' => "Top End Wedding",
+    'ANM' => "Dumbo",
+    'AHF' => "The Happy Prince",
+  ];
+
+  foreach ($movieList as $shortform => $fullname) {
+    if ($shortform == $movieID) {
+      return $fullname;
+    }
+  }
+}
+
+function getTime($timecode)
+{
+  $time = filter_var($timecode, FILTER_SANITIZE_NUMBER_INT);
+  if ($time > 12) {
+    $time = $time - 12;
+  }
+  return $time . "PM";
+}
 
 function preShow($arr, $returnAsString = false)
 {
