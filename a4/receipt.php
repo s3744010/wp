@@ -74,7 +74,8 @@ echo $_SESSION[''];
 
     .invoice .inner .top {
 
-        font-size: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
 
     }
 
@@ -86,6 +87,14 @@ echo $_SESSION[''];
 
 
 
+    }
+    
+    .custInfo{
+        position:absolute;
+        right: 200px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        
     }
 
     .ticket .container {
@@ -157,6 +166,12 @@ echo $_SESSION[''];
         <div class="inner">
             <h1>Tax Invoice</h1>
             <h2>LUNARDO</h2>
+            <div class="custInfo">
+                
+                <?php echo  $_SESSION['cust']['name'] ?><br>
+                <?php echo  $_SESSION['cust']['email'] ?><br>
+                <?php echo  $_SESSION['cust']['mobile'] ?><br>
+            </div>
 
 
             <div class="top">
@@ -166,11 +181,7 @@ echo $_SESSION[''];
                 <div class="hour">TIME: <?php echo  $_SESSION['movie']['hour'] ?></div>
             </div>
 
-            <div class="custInfo">
-                <?php echo  $_SESSION['cust']['name'] ?><br>
-                <?php echo  $_SESSION['cust']['email'] ?><br>
-                <?php echo  $_SESSION['cust']['mobile'] ?><br>
-            </div>
+           
 
             <div class="seat-deatails">
                 <table>
