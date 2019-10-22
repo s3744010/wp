@@ -26,22 +26,22 @@ function indexPage()
 
     if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
       $_POST = array();
-      exit();
+      return;
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $_POST = array();
-      exit();
+      return;
     }
 
     if (!preg_match("/^[0-9]{10}+$/", $mobile)) {
       $_POST = array();
-      exit();
+      return;
     }
 
-    if ($total < 0) {
+    if ($total <= 0) {
       $_POST = array();
-      exit();
+      return;
     }
 
     $file_open = fopen("bookings.csv", "a");
