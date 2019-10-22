@@ -23,21 +23,71 @@ receiptPage();
         --main-font-color: #C5C6C7;
     }
 
+    body{
+        background-image: url(../../media/blue-movie.jpg);
+        background-attachment: fixed;
+        background-position: center;
+     background-repeat: no-repeat;
+    background-size: cover;
+    }
+
     .invoice {
         display: block;
-        background: white;
-        border: 1px solid black;
+        background: rgba(0,0,0,.7);
+        border: 1px solid var(--main-font-color);
         height: auto;
         width: auto;
-        padding: 100px;
-        margin: 80px;
+        padding: 50px;
+        margin-top: 50px;
+        margin-left: 200px;
+        margin-right:200px;
+        margin-bottom: 50px;
 
     }
+
+    @media print {
+        *,
+    *:before,
+    *:after {
+       
+        color: #000 !important; // Black prints faster: h5bp.com/s
+       
+    }
+        body{
+            background:white;
+        }
+        .frontpagebtn {
+            display: none;
+        }
+
+        .invoice {
+            display: block;
+            background: white;
+            border: 1px solid black;
+            margin: 0%;
+            height: 50%;
+            width: 50%;
+            padding: 20px;
+            position: relative;
+            left: 20%;
+            color:black;
+
+        }
+
+        .ticket .ticket-grid{
+        display:grid;
+        grid-template-columns: auto auto auto auto !important;
+        grid-row-gap: 50px;
+        grid-column-gap: 20px;
+        margin: 10px;
+    }
+    }
+
 
     .invoice .inner {
         display: block;
         width: 100%;
-        color: black;
+        color: var(--main-font-color);
     }
 
     .invoice .h1 {
@@ -54,6 +104,7 @@ receiptPage();
         border-collapse: collapse;
         width: 100%;
         height: 200px;
+        margin-top:30px;
         box-shadow: 0 0 10px 2px #f5f5f5b2;
     }
 
@@ -67,28 +118,40 @@ receiptPage();
 
     .invoice .inner .top {
 
-        font-size: 20px;
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+
+
+    }
+
+    .invoice .inner .custInfo {
+
+
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        padding-left: 45%;
+
 
     }
 
     .ticket {
 
         height: 100%;
-        width: 80%;
-        padding: 100px;
+        width: 60%;
+        color:white;
+        margin-left: 100px;
+        margin-right:100px;
 
-
-
-    }
-
-    .ticket .container {
-        display: block;
-        background: #f8de7e;
-        height: 280px;
-        width: 600px;
+       
 
     }
 
+    .ticket img{
+        background: rgba(0,0,0,.7);
+        border: 1px solid white;
+    }
     .ticket .ticket-style {
         position: relative;
         font-family: "Montserrat", sans-serif;
@@ -135,6 +198,14 @@ receiptPage();
         text-align: left;
 
     }
+
+    .ticket .ticket-grid{
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 50px;
+        grid-column-gap: 20px;
+        margin: 10px;
+    }
 </style>
 
 <head>
@@ -145,26 +216,23 @@ receiptPage();
 </head>
 
 <body>
-    <a href="./index.php">Back to front page</a>
+    <div class="frontpagebtn"><a href="./index.php">Back to front page</a></div>
     <section class="invoice">
         <div class="inner">
             <h1>Tax Invoice</h1>
             <h2>LUNARDO</h2>
-
-
             <div class="top">
                 <a>ABN: 00 123 456 789</a>
                 <div class="movie-name"><?php echo getMovieName($_SESSION['movie']['id']); ?></div>
                 <div class="day">DAY: <?php echo $_SESSION['movie']['day'] ?></div>
                 <div class="hour">TIME: <?php echo getTime($_SESSION['movie']['hour']); ?></div>
             </div>
-
             <div class="custInfo">
+
                 <?php echo  $_SESSION['cust']['name'] ?><br>
                 <?php echo  $_SESSION['cust']['email'] ?><br>
                 <?php echo  $_SESSION['cust']['mobile'] ?><br>
             </div>
-
             <div class="seat-deatails">
                 <table>
                     <tr>
@@ -174,42 +242,23 @@ receiptPage();
                         <th>SUBTOTAL</th>
                     </tr>
                     <?php generateTaxInvoiceRows(); ?>
+                    <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Total:</td>
+                    <td><?php echo $_SESSION['seats']['totalPrice']?></td>
                 </table>
             </div>
+          
         </div>
     </section>
 
     <section class="ticket">
         <h1>Ticket</h1>
         <div class="container">
-
-            <!-- <div class="ticket-style">
-                <img src="../../media/ticketbg.png" alt="ticket">
-                <h2>LUNARDO</h2>
-                <br>
-                <div class="movie-name">DUMBO</div>
-                <br>
-                <div class="ticket-type"> ADULT STANDARD </div>
-
-                <div class="details">
-                    <table>
-                        <tr>
-                            <th>PRICE</th>
-                            <th>DATE</th>
-                            <th>TIME</th>
-                            <th>RATING</th>
-                        </tr>
-                        <tr>
-                            <td>$10</td>
-                            <td><?php echo  $_SESSION['movie']['day'] ?></td>
-                            <td><?php echo  $_SESSION['movie']['hour'] ?></td>
-                            <td>R</td>
-                        </tr>
-                    </table>
-                </div>
-            </div> -->
-            <?= generateTickets(); ?>
+           <div class="ticket-grid"><?= generateTickets(); ?></div>
         </div>
+
     </section>
 </body>
 
