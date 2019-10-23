@@ -576,81 +576,86 @@ main {
     cursor: pointer;
 } 
 
-.booking-form{
+.booking-form {
     display: none;
     background: linear-gradient(var(--secondary-bg-color), black 10%, black 90%, var(--secondary-bg-color));
     height: auto;
-    width: auto;
     padding-top: 50px;
     padding-bottom: 100px;
 }
 
-.booking-form .inner{
+.booking-form form {
     display: flex;
-    width: 100%;
     justify-content: center;
-    align-content: center;  
+    align-content: center;
 }
 
-.booking-form .booking-container{
-    height: auto;
+.booking-form .inner{
+    display: grid;
     width: 80%;
-}
+    margin: 0;
+    justify-content: center;
+    align-content: center;
 
-.booking-form .form {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
 
-    display: block;
-    height : auto;
-    width: auto;
-    border: 1px solid rgba(255, 255, 255);
-    padding : 10px;
-    
-}
-
-.booking-form .form {
     font-size: 20px;
     color: var(--main-font-color);
     font-family: "Montserrat", sans-serif;
 }
 
-.booking-form .inner-container{
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-row-gap: 100px;
-    grid-column-gap: 50px;
-    margin: 10px;
-
+.booking-form h1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
-.booking-form .inner-container .select-seat{
+.booking-form .select-seats {
+    height: auto;
+    width: auto;
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+
+    display: grid;
+    grid-template-rows: 7fr 7fr 1fr;
+    grid-auto-rows: 1fr;
+    grid-row-gap: 1em;
+
+    border: 1px solid rgba(255, 255, 255);
+    padding: 1em;
 }
 
-.booking-form .inner-container .booking-details{
-    grid-column-start: 2;
+.booking-form fieldset {
+    margin: 0;
+}
+
+.booking-form .select-seats .inner-container {
+    display: grid;
+    height: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    grid-auto-rows: 1fr;
+    grid-row-gap: 20px;
+    padding: 1em 0.5em 1em 0.5em;
+}
+
+.booking-form .field-container {
+    display: grid;
+    height: 100%;
+
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 20px;
+
+    align-items: center;
+}
+
+.booking-form .field-container label:first-child {
+    grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
 }
 
-.booking-form .form textarea{
-    width:500px;
-	height:200px;
-}
-
-
-.form select
-{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    width: 70%;
-    
+.booking-form .field-container select {
     font-size: 15px;
     padding: 5px 10px 5px 20px;
     outline: none;
@@ -658,14 +663,33 @@ main {
     border: 1px solid rgb(61, 61, 61);
 }
 
-.booking-details div {
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.booking-form .field-container label:last-child {
+    display: none;
+    color : red;
+    font-size: small;
 }
 
-.booking-details input {
-    width: 60%;
+.booking-form .booking-details {
+    display: grid;
+    height: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;    
+
+    border: 1px solid rgba(255, 255, 255);
+    padding: 2.5em;
+}
+
+.booking-form .booking-details .inner-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    grid-row-gap: 20px;
+    padding: 1em 0.5em 1em 0.5em;
+    margin-bottom: 10px;
+}
+
+.booking-form .booking-details input {
     height: 2.3em;
     padding: 5px 10px 5px 10px;
     justify-content: center;
@@ -675,16 +699,9 @@ main {
     border: 1px solid rgb(61, 61, 61);
 }
 
-.booking-details input + span {
-    padding-right: 30px;
-}
-
-#expiry {
-    width: 30%;
-}
-
-.booking-details .order-button{
+.booking-details button{
     margin-top: 10px;
+    width: 50%;
     background-color: #00000010;
     border: 4px solid var(--main-cont-color);
     color: white;
@@ -698,7 +715,7 @@ main {
     transition: all ease-in-out 500ms;
 }
 
-.order-button:hover{
+.booking-details button:hover{
     border-color: aliceblue;
     cursor: pointer;
     color: rgb(38, 226, 214);

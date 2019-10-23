@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Assignment 2</title>
+  <title>Assignment 4</title>
 
   <!-- Keep wireframe.css for debugging, add your css to style.css -->
   <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
@@ -148,7 +148,7 @@
 
         <h1>Now Showing</h1>
         <div class="movie-container">
-          <a id="avengers_link" href="#synopsis" onclick="movieOption(this)">
+          <a id="ACT_Link" href="#synopsis" onclick="movieOption(this)">
             <div class="movie">
               <div class="poster">
                 <div class="img">
@@ -181,7 +181,7 @@
             </div>
           </a>
 
-          <a id="top-end-wedding_link" href="#synopsis" onclick="movieOption(this)">
+          <a id="RMC_Link" href="#synopsis" onclick="movieOption(this)">
             <div class="movie">
               <div class="poster">
                 <div class="img">
@@ -211,7 +211,7 @@
             </div>
           </a>
 
-          <a id="dumbo_link" href="#synopsis" onclick="movieOption(this)">
+          <a id="ANM_Link" href="#synopsis" onclick="movieOption(this)">
             <div class="movie">
               <div class="poster">
                 <div class="img">
@@ -244,7 +244,7 @@
             </div>
           </a>
 
-          <a id="happy-prince_link" href="#synopsis" onclick="movieOption(this)">
+          <a id="AHF_Link" href="#synopsis" onclick="movieOption(this)">
             <div class="movie">
               <div class="poster">
                 <div class="img">
@@ -303,161 +303,169 @@
 
     <a id="booking-form" class="section_anchors"></a>
     <section class="booking-form">
-      <form method="POST" action="">
+      <form method="POST" action="" novalidate>
         <div class="inner">
-          <div class="booking-container">
-            <div class="form">
-              <h1></h1>
+          <h1></h1>
+          <input type="hidden" name="movie[id]" id="movie-id" value="">
+          <input type="hidden" name="movie[day]" id="movie-day" value="">
+          <input type="hidden" name="movie[hour]" id="movie-hour" value="">
+          <div class="select-seats">
+            <fieldset>
+              <legend>Standard</legend>
               <div class="inner-container">
-                <div class="select-seat">
-                  <fieldset>
-                    <legend>Standard</legend>
-                    <div>
-                      <label><span>Adult</span>
-                        <select name='seats[STA]' id="seats-STA" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
-                          <option value="0">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div>
-                      <label><span>Concession </span>
-                        <select name='seats[STP]' id="seats-STP" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
-                          <option value="0">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div>
-                      <label><span>Children </span>
-                        <select name='seats[STC]' id="seats-STC" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
-                          <option value="0">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                  </fieldset>
-
-                  <fieldset>
-                    <legend>First Class</legend>
-                    <div><label><span>Adult </span>
-                        <select name='seats[FCA]' id="seats-FCA" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
-                          <option value="0">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div><label><span>Concession </span>
-                        <select name='seats[FCP]' id="seats-FCP" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
-                          <option value="0">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div>
-                      <label><span>Children </span>
-                        <select name='seats[FCC]' id="seats-FCC" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
-                          <option value="0">Please Select</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                  </fieldset>
-
-                  <div class="total">
-                    <p>Total $<span id="totalPrice_display">0</span></p>
-                    <input type="number" name="seats[totalPrice]" id="totalPrice" value="" hidden>
-                  </div>
+                <div class="field-container">
+                  <label for="seats-STA">Adult</label>
+                  <select name='seats[STA]' id="seats-STA" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
+                    <option value="0">Please Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <label for="seats-STA">*</label>
                 </div>
-
-                <div class="booking-details">
-                  <div>
-                    <label>Name</label><br>
-                    <input type="text" name="cust[name]" id="name" placeholder="Insert your name..." pattern="[a-zA-Z ]+" title="Insert only letters" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
-                  </div>
-
-                  <div>
-                    <label>Email</label><br>
-                    <input type="email" name="cust[email]" id="email" placeholder="example@domain.com" title="example@domain.com" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
-                  </div>
-
-                  <div>
-                    <label>Mobile</label><br>
-                    <input type="tel" name="cust[mobile]" id="mobile" placeholder="mobile phone number" title="mobile phone number" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
-                  </div>
-
-                  <div>
-                    <label>Credit Card</label><br>
-                    <input type="text" name="cust[card]" id="credit-card" placeholder="####-####-####-####" title="8 digit credit card number" pattern="[0-9]+-[0-9]+-[0-9+]+-[0-9]+" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
-                  </div>
-
-                  <div>
-                    <label>Expiry</label><br>
-                    <span><input type=month name="cust[expiry]" id="expiry" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
-                    </span>
-                  </div>
-                  <button type="submit" class="order-button">ORDER</button>
+                <div class="field-container">
+                  <label for="seats-STP">Concession </label>
+                  <select name='seats[STP]' id="seats-STP" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
+                    <option value="0">Please Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <label for="seats-STP">*</label>
+                </div>
+                <div class="field-container">
+                  <label for="seats-STC">Children</label>
+                  <select name='seats[STC]' id="seats-STC" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
+                    <option value="0">Please Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <label for="seats-STC">*</label>
                 </div>
               </div>
+            </fieldset>
+            <fieldset>
+              <legend>First Class</legend>
+              <div class="inner-container">
+                <div class="field-container">
+                  <label for="seats-FCA">Adult</label>
+                  <select name='seats[FCA]' id="seats-FCA" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
+                    <option value="0">Please Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <label for="seats-FCA">*</label>
+                </div>
+                <div class="field-container">
+                  <label for="seats-FCP">Concession</label>
+                  <select name='seats[FCP]' id="seats-FCP" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
+                    <option value="0">Please Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <label for="seats-FCP">*</label>
+                </div>
+                <div class="field-container">
+                  <label for="seats-FCC">Children</label>
+                  <select name='seats[FCC]' id="seats-FCC" onfocus="glowBorder(this)" onblur="dimBorder(this)" onchange="calculateTotal()">
+                    <option value="0">Please Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <label for="seats-FCC">*</label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="totalPrice">
+              <p>Total $<span id="totalPrice_display">0</span></p>
+              <input type="hidden" name="seats[totalPrice]" id="totalPrice" value="">
+            </div>
+          </div>
+
+          <div class="booking-details">
+            <div class="inner-container">
+              <div class="field-container">
+                <label for="name">Name</label>
+                <input type="text" value="" name="cust[name]" id="name" placeholder="Insert your name..." title="Insert only letters" onfocus="glowBorder(this)" onblur="dimBorder(this)" novalidate required>
+                <label for="name"></label>
+              </div>
+
+              <div class="field-container">
+                <label for="email">Email</label>
+                <input type="email" name="cust[email]" id="email" placeholder="example@domain.com" title="example@domain.com" onfocus="glowBorder(this)" onblur="dimBorder(this)" novalidate required>
+                <label for="email">Error messages</label>
+              </div>
+
+              <div class="field-container">
+                <label for="mobile">Mobile</label>
+                <input type="tel" name="cust[mobile]" id="mobile" placeholder="mobile phone number" title="mobile phone number" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
+                <label for="mobile">Error messages</label>
+              </div>
+
+              <div class="field-container">
+                <label for="credit-card">Credit Card</label>
+                <input type="text" name="cust[card]" id="credit-card" placeholder="#### #### #### ####" title="8 digit credit card number" onfocus="glowBorder(this)" onblur="dimBorder(this)" novalidate required>
+                <label for="credit-card">Error messages</label>
+              </div>
+
+              <div class="field-container">
+                <label for="expiry">Expiry</label>
+                <input type=month name="cust[expiry]" id="expiry" onfocus="glowBorder(this)" onblur="dimBorder(this)" required>
+                <label for="expiry">Error messages</label>
+              </div>
+              <button type="submit">ORDER</button>
             </div>
           </div>
         </div>
       </form>
     </section>
+
   </main>
 
   <footer>
@@ -504,6 +512,10 @@
     </div>
   </footer>
 
+  <?php 
+    php2js($_SESSION, 'originalInputs');
+   ?>
+
   <script>
     window.onscroll = function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -520,7 +532,16 @@
       }
     };
     setExpiryDateMinMax();
+
+    onload = function() {
+      document.getElementById('credit-card').oninput = function() {
+        this.value = cc_format(this.value);
+      }
+    }
+
+    loadInputs(originalInputs);
   </script>
+
 
 </body>
 

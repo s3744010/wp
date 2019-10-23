@@ -5,79 +5,82 @@ session_start();
 function indexPage()
 {
   if (!empty($_POST)) {
-    $_SESSION['seats'] = $_POST['seats'];
     $_SESSION['movie'] = $_POST['movie'];
     $_SESSION['cust'] = $_POST['cust'];
+    $_SESSION['seats'] = $_POST['seats'];
 
-    $date = date("Y/m/d");
-    $name = $_POST['cust']['name'];
-    $email = $_POST['cust']['email'];
-    $mobile = $_POST['cust']['mobile'];
-    $movieID = $_POST['movie']['id'];
-    $day = $_POST['movie']['day'];
-    $hour = $_POST['movie']['hour'];
-    $STA = $_POST['seats']['STA'];
-    $STP = $_POST['seats']['STP'];
-    $STC = $_POST['seats']['STC'];
-    $FCA = $_POST['seats']['FCA'];
-    $FCP = $_POST['seats']['FCP'];
-    $FCC = $_POST['seats']['FCC'];
-    $total = $_POST['seats']['totalPrice'];
+    $_POST = array();
+
+    $errors = 0;
+
+    $name = $_SESSION['cust']['name'];
+    $email = $_SESSION['cust']['email'];
+    $mobile = $_SESSION['cust']['mobile'];
+    $movieID = $_SESSION['movie']['id'];
+    $day = $_SESSION['movie']['day'];
+    $hour = $_SESSION['movie']['hour'];
+    $total = $_SESSION['seats']['totalPrice'];
 
     if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-      $_POST = array();
-      return;
+      $errors++;
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $_POST = array();
-      return;
+      $errors++;
     }
 
     if (!preg_match("/^[0-9]{10}+$/", $mobile)) {
-      $_POST = array();
-      return;
+      $errors++;
     }
 
     if ($total <= 0) {
-      $_POST = array();
-      return;
+      $errors++;
     }
 
-    $file_open = fopen("bookings.csv", "a");
-    $form_data = array(
-      'Date'  => $date,
-      'Name'  => $name,
-      'Email' => $email,
-      'Mobile' => $mobile,
-      'MovieID' => $movieID,
-      'Day' => $day,
-      'Hour' => $hour,
-      'STA' => $STA,
-      'STP' => $STP,
-      'STC' => $STC,
-      'FCA' => $FCA,
-      'FCP' => $FCP,
-      'FCC' => $FCC,
-      'Total' => $total
-    );
-    fputcsv($file_open, $form_data);
-    $date = '';
-    $name = '';
-    $email = '';
-    $mobile = '';
-    header("Location: ./receipt.php");
-    exit();
+    if ($errors > 0) {
+      
+      header("Location: ./index.php");
+    } else {
+      saveData();
+      header("Location: ./receipt.php");
+    }
   }
+}
+
+function saveData() {
+  // $file_open = fopen("bookings.txt", "a");
+    $form_data = array(
+      'data' => array(
+        'Date'  => date("Y/m/d"),
+        'Name'  => $_SESSION['cust']['name'],
+        'Email' => $_SESSION['cust']['email'],
+        'Mobile' => $_SESSION['cust']['mobile'],
+        'MovieID' => $_SESSION['movie']['id'],
+        'Day' => $_SESSION['movie']['day'],
+        'Hour' => $_SESSION['movie']['hour'],
+        'STA' => $_SESSION['seats']['STA'],
+        'STP' => $_SESSION['seats']['STP'],
+        'STC' => $_SESSION['seats']['STC'],
+        'FCA' => $_SESSION['seats']['FCA'],
+        'FCP' => $_SESSION['seats']['FCP'],
+        'FCC' => $_SESSION['seats']['FCC'],
+        'Total' => $_SESSION['seats']['totalPrice']
+      )
+    );
+
+    $filename = "bookings.txt";
+    $file_open = fopen($filename,"a");
+    flock($file_open, LOCK_EX);
+    foreach ($form_data as $data)
+        fputcsv($file_open, $data, "\t");
+    flock($file_open, LOCK_UN);
+    fclose($file_open);
 }
 
 function receiptPage()
 {
   if (!$_SESSION) {
     header("Location: ./index.php");
-    exit();
-  } else {
-    $_POST = array();
   }
 }
 
@@ -87,30 +90,28 @@ function generateTickets()
   foreach ($seats as $seatType => $value) {
     for ($index = 0; $index < $value && $seatType != "totalPrice"; $index++) {
 
-      echo  '<div class="ticket-style">
-                <img src="../../media/ticketbg.png" alt="ticket">
-                <h2>LUNARDO</h2>
-                <br>
+      echo '<div class="ticket-style">
+              <div class="ticket-details">
                 <div class="movie-name">'. getMovieName($_SESSION['movie']['id']) .'</div>
-                <br>
+                <div class="title">LUNARDO</div>
                 <div class="ticket-type">'. getSeatType($seatType) .'</div>
-
                 <div class="details">
-                    <table>
-                        <tr>
-                            <th>PRICE</th>
-                            <th>DATE</th>
-                            <th>TIME</th>
-                            <th>RATING</th>
-                        </tr>
-                        <tr>
-                            <td>$'. getSeatPrice('STA') .'</td>
-                            <td>'. $_SESSION['movie']['day'] .'</td>
-                            <td>'. getTime($_SESSION['movie']['hour']) .'</td>
-                            <td>R</td>
-                        </tr>
-                    </table>
+                  <table>
+                    <tr>
+                      <th>PRICE</th>
+                      <th>DATE</th>
+                      <th>TIME</th>
+                      <th>RATING</th>
+                    </tr>
+                    <tr>
+                      <td>$'. getSeatPrice($seatType) .'</td>
+                      <td>'. $_SESSION['movie']['day'] .'</td>
+                      <td>'. getTime($_SESSION['movie']['hour']) .'</td>
+                      <td>R</td>
+                    </tr>
+                  </table>
                 </div>
+              </div>
             </div>';
     }
   }
@@ -125,8 +126,8 @@ function generateTaxInvoiceRows()
       echo '<tr>
               <td>'. $value .'</td>
               <td>'. getSeatType($seatType) .'</td>
-              <td>'. getSeatPrice($seatType) .'</td>
-              <td>'. $value * getSeatPrice($seatType) .'</td>
+              <td>$'. getSeatPrice($seatType) .'</td>
+              <td>$'. number_format((float)($value * getSeatPrice($seatType)), 2, '.', '') .'</td>
             </tr>';
     }
   }
@@ -168,7 +169,7 @@ function getSeatPrice($seat)
 
   foreach ($prices[strval($ret)] as $index => $price) {
     if ($index == $seat) {
-      return $price;
+      return number_format((float)$price, 2, '.', '');
     }
   }
 }
@@ -205,6 +206,7 @@ function getMovieName($movieID)
       return $fullname;
     }
   }
+  return null;
 }
 
 function getTime($timecode)
@@ -214,6 +216,10 @@ function getTime($timecode)
     $time = $time - 12;
   }
   return $time . "PM";
+}
+
+function getGST($price) {
+  return number_format((float)($price / 11), 2, '.', '');
 }
 
 function preShow($arr, $returnAsString = false)
